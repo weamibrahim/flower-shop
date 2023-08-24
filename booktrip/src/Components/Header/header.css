@@ -1,0 +1,21 @@
+
+.icon{
+    font-size: 40px;
+
+    color: #ff58b9;
+}
+.icone{
+    font-size: 30px;
+    
+    color: #ff58b9;
+}
+
+li{
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+  font-size: 10px;
+}
+li :hover  {
+    color:#ff58b9  !important;
+}

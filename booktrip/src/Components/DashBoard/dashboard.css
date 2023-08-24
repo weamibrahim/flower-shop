@@ -1,0 +1,18 @@
+.bg{
+
+
+    background-image: url("https://img.freepik.com/free-photo/top-view-roses-flowers-with-copy-space_23-2148860042.jpg?size=626&ext=jpg&ga=GA1.1.1532466403.1676939380&semt=sph");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+  }
+  .carousel-overlay {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.658);
+    padding: 20px;
+    border-radius: 5px;
+  }

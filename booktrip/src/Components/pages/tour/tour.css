@@ -1,0 +1,21 @@
+.carousel-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.658);
+    padding: 20px;
+    border-radius: 5px;
+  }
+  .icons{
+    font-size: 40px;
+    color: black;
+  }
+  @media (max-width: 768px) {
+    .carousel-overlay {
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
+
+
