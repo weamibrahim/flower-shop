@@ -93,8 +93,5 @@
 ## **Deployment**
 we can see it [https://flowershop-7326f.web.app]
 
- ## **CONTRIBUTORS**
-
-- [Weam Ibrahim](https://github.com/weamibrahim)
 
 
