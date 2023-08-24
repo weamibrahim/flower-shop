@@ -1,8 +1,8 @@
 # flower-shop
 <div align="center" margin-top="5px">
-  <img src="https://img.freepik.com/free-photo/top-view-assortment-roses-with-copy-space_23-2148387961.jpg?w=1060&t=st=1692907792~exp=1692908392~hmac=28ca57de7b9cd5e8c600b00515a2e789b74575986975ea8218da3427825b5e6a" alt="animate" width="200"/><br>
+  <img src="https://img.freepik.com/free-photo/top-view-pink-flower-with-drops_1112-450.jpg?w=996&t=st=1692908385~exp=1692908985~hmac=d23cce672841dbf80bf8e7ae4da34b7ae15299bf6dbeef362f0cb7694f6b2ebd" alt="animate" width="200"/><br>
   <a href=#">
-    <img src="https://img.freepik.com/free-photo/close-up-set-pink-roses-outdoor_23-2148387953.jpg?w=1060&t=st=1692907645~exp=1692908245~hmac=48ce6536fe110fa78f784065d4d3332a3f5614dbb13fb45f47a4ca717677a6f9" alt="Typing SVG">
+   
   </a>
 </div>
 
@@ -91,7 +91,7 @@
 
 <br>
 
-## **TECHNOLOGIES**
+## **Deployment**
 we can see it [https://flowershop-7326f.web.app]
 
  ## **CONTRIBUTORS**
