@@ -1,4 +1,4 @@
-# flower-shop
+# Flower-shop
 <div align="center" margin-top="5px">
   <img src="https://img.freepik.com/free-photo/top-view-pink-flower-with-drops_1112-450.jpg?w=996&t=st=1692908385~exp=1692908985~hmac=d23cce672841dbf80bf8e7ae4da34b7ae15299bf6dbeef362f0cb7694f6b2ebd" alt="animate" width="200"/><br>
   <a href=#">
@@ -32,8 +32,7 @@
 - **Secure Checkout and Payment Process**<br>
   The website ensures a secure and hassle-free checkout process, and make payments through a secure payment gateway.
 
-- **Order History**<br>
-  The website offers to users to see their order history.
+-
 
 
 
