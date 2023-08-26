@@ -32,7 +32,11 @@
 - **Secure Checkout and Payment Process**<br>
   The website ensures a secure and hassle-free checkout process, and make payments through a secure payment gateway.
 
--
+- **Mobile Responsiveness**<br>
+  The website is designed to be responsive across various devices, including smartphones and tablets. 
+
+
+
 
 
 ## **DEMO**
