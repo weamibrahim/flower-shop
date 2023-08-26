@@ -49,7 +49,7 @@ function Addtour() {
                 // Handle successful creation, e.g., redirect to flowers page
                 // console.log('flower created:', data);
                 // Redirect to the flowers page after successful creation
-                window.location.href = '/dashboard/alltour'; // Change this to the correct URL for your flowers page
+            window.location.href = '/dashboard/alltour'; // Change this to the correct URL for your flowers page
             })
             .catch((error) => {
                 console.error('Error creating flower:', error);

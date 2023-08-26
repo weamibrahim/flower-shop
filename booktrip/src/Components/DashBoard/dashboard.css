@@ -1,18 +1,34 @@
-.bg{
+/* Default styles */
+.bg {
+  background-image: url("https://img.freepik.com/free-photo/top-view-roses-flowers-with-copy-space_23-2148860042.jpg?size=626&ext=jpg&ga=GA1.1.1532466403.1676939380&semt=sph");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh; /* Ensure full viewport height */
+  position: relative; /* Needed for overlay positioning */
+}
 
+.overlay {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.658);
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center; /* Center-align the content */
+}
+.overlay h2 {
+  margin: 0; /* Remove default margin */
+}
 
-    background-image: url("https://img.freepik.com/free-photo/top-view-roses-flowers-with-copy-space_23-2148860042.jpg?size=626&ext=jpg&ga=GA1.1.1532466403.1676939380&semt=sph");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    
+/* Media queries */
+@media (max-width: 768px) {
+  /* Adjust overlay for smaller screens */
+  .overlay {
+    font-size: 14px;
+    padding: 10px;
   }
-  .carousel-overlay {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.658);
-    padding: 20px;
-    border-radius: 5px;
-  }
+  
+  /* ... (other styles) */
+}

@@ -106,7 +106,7 @@ function UpdateProfile() {
                         <span className="user">address</span>
                     </div>
 
-                    <button className="btn btn-info" style={{ marginBottom: "20px" }} type="submit">Update Artist</button>
+                    <button className="btn btn-info" style={{ marginBottom: "20px" }} type="submit">Update </button>
                 </form>
             </div>
         </div>

@@ -10,7 +10,7 @@ function DashBoard() {
         <Sidebar />
         
               
-        <div className="container-fluid bg"><div className="carousel-overlay">
+        <div className="container-fluid bg"><div className="overlay">
                 <h2>Welcome to DashBoard</h2>
               </div></div>
        

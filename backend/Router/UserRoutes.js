@@ -11,6 +11,7 @@ const router = express.Router();
 
 
 router.get('/alluser', userController.getAllUsers);
+
 router.get('/:id', userController.getUserById);
 
 router.delete('/delete/:id', userController.deleteUserById);

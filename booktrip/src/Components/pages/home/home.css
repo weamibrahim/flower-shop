@@ -91,10 +91,12 @@
     font-family: "Barlow Condensed";
     width: 20%;}
 
+    
     .destination-item img {
-      transition: .5s;
+      max-width: 100%;
+      height: auto;
+      transition: 0.5s;
     }
-  
     .destination-item:hover img {
       transform: scale(1.3);
     }
@@ -122,4 +124,17 @@
       left: 0px;
       border-width: 30px;
     }
-    
+  
+    @media (max-width: 768px) {
+      .banner-heading h1 {
+        font-size: 60px; /* Adjust as needed */
+      }
+      .destination-item {
+        width: 100%; /* Make the items span the full width */
+      }
+    }
+    @media (max-width: 400px) {
+      .banner-heading h1 {
+        font-size: 30px; /* Adjust as needed */
+      }
+     }

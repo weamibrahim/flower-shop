@@ -47,7 +47,7 @@ authController.register = async (req, res, next) => {
 
     const accessToken = jwt.sign({ userId: savedUser._id },  accessTokenSecret);
 
-    res.status(201).json({ message: 'User created successfully', accessToken ,user});
+    res.status(201).json({ message: 'User created successfully', accessToken ,user: savedUser});
   } catch (err) {
     console.error('Error hashing password:', err);
     next(err);

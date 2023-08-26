@@ -20,7 +20,7 @@ function Login() {
       });
 
       const data = await response.json();
-
+      console.log(data)
       if (response.ok) {
         // Login successful
 
@@ -53,17 +53,17 @@ function Login() {
   return (
 
 
-    <div className="container d-flex justify-content-center"><div className="my-5">
-      <div className="cards">
+    <div className="container d-flex justify-content-center" ><div className="my-5">
+      <div className="cardslog" style={{border:"1px solid red"}}>
         <a className="login">login</a>
-        <div className="inputBox1">
+        <div className="inputBox1 ">
           <input type="text" required="required " value={email} onChange={(e) => setEmail(e.target.value)} />
           <span className="user">Email</span>
         </div>
 
 
 
-        <div className="inputBox">
+        <div className="inputBox ">
           <input type="password" required="required" value={password} onChange={(e) => setPassword(e.target.value)} />
           <span>Password</span>
         </div>

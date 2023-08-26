@@ -13,12 +13,15 @@ class Tour extends Component {
   }
   componentDidMount() {
     fetch("http://localhost:7000/api/Flower/Flowers")
-      .then((response) => { return response.json(); })
+      .then((response) => { 
+       // console.log("before .json",response)
+        return response.json(); })
       .then((data) => {
-        console.log(data);
+       // console.log("after response",data);
         this.setState({ flowers: data })
 
       })
+      
 
   }
   handleSearchInputChange = (event) => {
@@ -33,18 +36,18 @@ class Tour extends Component {
           <div className="carousel-inner ">
             <div className="carousel-item active">
               <div className="carousel-overlay">
-                <h2>Welcome to Our Website!</h2>
+                <h2>Welcome to  Website</h2>
               </div>
               <img
                 src="https://img.freepik.com/free-photo/beautiful-tulips-white-pink-white-wooden-background_24972-218.jpg?size=626&ext=jpg&ga=GA1.2.1532466403.1676939380&semt=sph"
                 className="d-block w-100"
                 alt="..."
-                style={{ maxHeight: "700px" }}
+                style={{ maxHeight: "500px" }}
               />
             </div>
             <div className="carousel-item">
               <div className="carousel-overlay">
-                <h2>Welcome to Our Website!</h2>
+                <h2>Welcome to  Website</h2>
               </div>
               <img
                 src="https://img.freepik.com/free-photo/lovely-bouquet-pink-white-tulips-white-wooden-background_24972-225.jpg?size=626&ext=jpg&ga=GA1.1.1532466403.1676939380&semt=sph"
@@ -55,7 +58,7 @@ class Tour extends Component {
             </div>
             <div className="carousel-item">
               <div className="carousel-overlay">
-                <h2>Welcome to Our Website!</h2>
+                <h2>Welcome to  Website</h2>
               </div>
               <img
                 src="https://img.freepik.com/free-photo/blue-pink-flowers-with-vintage-wooden-background_24837-132.jpg?size=626&ext=jpg&ga=GA1.1.1532466403.1676939380&semt=sph"
@@ -87,8 +90,8 @@ class Tour extends Component {
 
         <div className="row row-cols-1  g-0 my-5"  >
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <BsSearch className='icons mx-3' />
-            <input style={{ width: "400px", height: "50px", border: "4px solid #ff58b9", borderRadius: "10px" }}
+            <BsSearch className='icons mx-2 ' />
+            <input style={{maxWidth: "400px", height: "50px", border: "4px solid #ff58b9", borderRadius: "10px" }}
               type="text"
               placeholder="Search by name or price"
               value={this.state.searchQuery}

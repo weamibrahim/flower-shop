@@ -6,6 +6,7 @@ const TourDetail = () => {
 
 
   let { id } = useParams();
+  console.log(id);
   let [flower, setflower] = useState([]);
   useEffect(() => {
     fetch(`http://localhost:7000/api/flower/${id}`)

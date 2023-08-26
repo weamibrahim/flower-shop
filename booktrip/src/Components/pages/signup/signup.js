@@ -39,6 +39,7 @@ function Signup() {
       if (response.ok) {
         localStorage.setItem('userData', JSON.stringify(data.user));
         localStorage.setItem('accessToken', data.accessToken);
+        localStorage.setItem('userId', data.userId); 
         // Registration successful
 
         // Redirect to the login page or another page
@@ -77,7 +78,7 @@ function Signup() {
               <option value="">Select Gender</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
-              <option value="other">Other</option>
+         
             </select>
           </div>
 

@@ -63,9 +63,9 @@ function App() {
                     <Route path="/profile" element={loggedIn ? <Profile /> : <Navigate to="/login" />} />
                     <Route path="/update" element={loggedIn ? <UpdateProfile /> : <Navigate to="/login" />} />
                     {/* Use a function to conditionally navigate */}
-                    <Route path="/tour" element={loggedIn ? <Tour /> : <Navigate to="/login" />} />
+                    <Route path="/tour" element={<Tour />} />
                     
-                    <Route path="/tour/:id" element={<TourDetail />} />
+                    <Route path="/tour/:id" element={loggedIn ?<TourDetail />: <Navigate to="/login"/>} />
                     <Route path="/cart"element={loggedIn ? <Cart /> : <Navigate to="/login"/>}/>
                     <Route path="/checkout"element={<Checkout/>}/>
                     <Route path="*" element={<Error />} />

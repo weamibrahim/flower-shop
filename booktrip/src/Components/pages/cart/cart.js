@@ -93,7 +93,7 @@ function Cart() {
             <tbody>
               <tr key={item.flowerId._id} className="text-center">
                 <td >
-                  <img style={{ width: "50px", height: "50px" }} src={item.flowerId.image} />             </td>
+                  <img style={{ width: "50px", height: "50px" }} src={'http://localhost:7000/images/'+item.flowerId.image} />             </td>
                 <td >
                   {item.flowerId.name}
                 </td>

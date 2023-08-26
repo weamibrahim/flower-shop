@@ -8,13 +8,14 @@
     margin-top: 1.5em;
   }
   
-  .cards {
+  .cardslog {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 350px;
-    width: 600px;
+   max-width:  600px;
     flex-direction: column;
+   
     gap: 35px;
     border-radius: 15px;
     background: #e3e3e3;
@@ -23,15 +24,32 @@
     border-radius: 8px;
   }
   
+  @media (max-width: 768px) {
+    .cardslog {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 350px;
+      max-width:  400px;
+      flex-direction: column;
+     
+      gap: 35px;
+      border-radius: 15px;
+      background: #e3e3e3;
+      box-shadow: 16px 16px 32px #c8c8c8,
+            -16px -16px 32px #fefefe;
+      border-radius: 8px;/* Adjust width for smaller screens */
+    }
+  }  
   .inputBox,
   .inputBox1 {
     position: relative;
-    width: 350px;
+    max-width:  350px;
   }
   
   .inputBox input,
   .inputBox1 input {
-    width: 100%;
+   
     padding: 10px;
     outline: none;
     border: none;
@@ -42,6 +60,7 @@
     border-bottom: 2px solid #000;
     transition: 0.1s;
     border-bottom-left-radius: 8px;
+   
   }
   
   .inputBox span,
@@ -108,4 +127,7 @@
   .enter:hover {
     background-color: rgb(0, 0, 0);
     color: white;
+
+
   }
+ 

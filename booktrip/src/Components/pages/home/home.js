@@ -31,7 +31,7 @@ function Home() {
                 <div className="container pt-5 pb-3">
                     <div className="text-center mb-3 pb-3">
                         {/* <h6 className="text-primary text-uppercase" style={{letterSpacing: "5px"}}></h6> */}
-                        <h1>MY favourite flower </h1>
+                        <h3>MY favourite flower </h3>
                     </div>
                     <div className="row">
                         <div className="col-lg-4 col-md-6 mb-4" >
