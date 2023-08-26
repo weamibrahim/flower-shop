@@ -54,7 +54,7 @@ function Login() {
 
 
     <div className="container d-flex justify-content-center" ><div className="my-5">
-      <div className="cardslog" style={{border:"1px solid red"}}>
+      <div className="cardslog">
         <a className="login">login</a>
         <div className="inputBox1 ">
           <input type="text" required="required " value={email} onChange={(e) => setEmail(e.target.value)} />
