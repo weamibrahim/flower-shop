@@ -10,10 +10,6 @@
   }
 
  
-  .top-section {
-    padding: 60px 40px;
-    
-  }
   
 
   .pic {
@@ -28,47 +24,16 @@
     /* position: relative; */
   }
  
-  @keyframes wave{
-    to {
-      transform: scale(1.3);
-      opacity: 0;
-    }
-  }
+ 
   .pic img {
     width: 100%;
     height: 100%;
     border-radius:50%;
   }
-  .name {
-    color: #f1f1f1;
-    font-size: 28px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
-  .tag {
-    font-size: 18px;
-    color: #222;
-  }
-  .bottom-section {
-    background: #f1f1f1;
-    padding: 60px 14px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: centre;
-    text-transform: uppercase;
-    font-size: 20px;
-  }
-  .bottom-section span {
-    font-size: 14px;
-    display: block;
-  }
-  .border {
-    width: 1px; 
-    height: 20px;
-    background: #bbb;
-    margin: 0 20px;
-  }
+
+ 
+
+
 
  
 

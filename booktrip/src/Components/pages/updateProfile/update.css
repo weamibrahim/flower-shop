@@ -9,20 +9,40 @@
   text-align: center;
 }
 
-.cardsl {
+.cardsup {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 350px;
-  width: 600px;
+ max-width:  600px;
   flex-direction: column;
+ 
   gap: 35px;
   border-radius: 15px;
   background: #e3e3e3;
   box-shadow: 16px 16px 32px #c8c8c8,
         -16px -16px 32px #fefefe;
   border-radius: 8px;
+  padding: 30px;
 }
+
+@media (max-width: 768px) {
+  .cardsup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 350px;
+    max-width:  400px;
+    flex-direction: column;
+   
+    gap: 35px;
+    border-radius: 15px;
+    background: #e3e3e3;
+    box-shadow: 16px 16px 32px #c8c8c8,
+          -16px -16px 32px #fefefe;
+    border-radius: 8px;/* Adjust width for smaller screens */
+  }
+} 
 .inputBox1{
   margin-top: 20px;
 }

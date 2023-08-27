@@ -56,7 +56,7 @@ function UpdateProfile() {
             <div className="my-5">
 
 
-                <form onSubmit={handleUpdate} className="cardsl">
+                <form onSubmit={handleUpdate} className="cardsup">
                     <h2 className="login">Update </h2>
                     <div className="inputBox1">
                         <input

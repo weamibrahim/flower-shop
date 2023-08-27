@@ -42,7 +42,7 @@ class Alltour extends Component {
             <div> 
             
             
-            <div className="d-flex justify-content-center">
+            <div className="d-flex justify-content-center " >
             <Sidebar/>
          <div className="container-fluid bg  ">   <button className="btn btn-info my-3"><NavLink to="addtour"   className="text-decoration-none text-white"  >Add flower</NavLink> </button>
 <span style={{marginLeft:"600px"}}>

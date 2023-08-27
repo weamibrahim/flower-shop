@@ -1,6 +1,7 @@
 import { Component } from "react"
 import Sidebar from "../../sidebar/sidebar";
 import { BsSearch } from "react-icons/bs";
+import "./alluser.css"
 class Alluser extends Component {
 
 
@@ -44,9 +45,9 @@ class Alluser extends Component {
 
         <div className="d-flex justify-content-center">
           <Sidebar />
-          <div className="container-fluid bg">
+          <div className="container-fluid bgu">
             <span >
-              <BsSearch className='icons mx-3' />
+              <BsSearch className='icons ' />
               <input style={{ width: "400px", height: "50px", border: "4px solid #ff58b9", borderRadius: "10px" }} className="my-3"
                 type="text"
                 placeholder="Search by name or email"

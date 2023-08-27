@@ -7,7 +7,7 @@ function Profile() {
 
 
         <div className="pt-4 area" style={{ textAlign: "center", height: "1000px " }}>
-            <div className="container top-section" style={{ margin: " 0 auto", maxWidth: " 600px" }}
+            <div className="container " style={{ margin: " 0 auto", maxWidth: " 600px" }}
             >
 
                 <div className="pic" >
@@ -19,19 +19,19 @@ function Profile() {
             </div>
 
             <div style={{ textAlign: "center" }}>
-                <div className="container" style={{ margin: " 0 auto", maxWidth: " 800px" }}>
-                    <div className="main-body justify-content-center align-items-center">
+                <div className="container" style={{maxWidth: " 800px" }}>
+                    <div className=" justify-content-center align-items-center" >
                         <div className="row ">
 
                             <div className="pb-5 col-lg-12 align-items-center justify-content-center">
-                                <div className="card border-0 shadow p-0 mb-5 bg-body-tertiary rounded">
+                                <div className=" border-0 shadow p-0 mb-5 bg-body-tertiary rounded">
                                     <div className="card-body m-2 " >
-                                        <div className="row mb-3">
-                                            <div className="col-sm-2">
+                                        <div className="row mb-3 ">
+                                            <div className="col-sm-2 mt-3">
                                                 Name
                                             </div>
                                             <div className="col-sm-10 text-secondary">
-                                                <span className="pt-2 form-control" style={{ border: "2px solid red   !important" }}>{userData.user_name}</span>
+                                                <span className="pt-2 form-control mt-3" style={{ border: "2px solid red   !important" }}>{userData.user_name}</span>
                                             </div>
 
                                         </div>
@@ -73,7 +73,7 @@ function Profile() {
 
 
                                         <div className=" d-flex justify-content-center ">
-                                            <button className="btn btn-info" ><NavLink style={{ color: "white", textDecoration: "none" }} to={'/update'}> update</NavLink>
+                                            <button className="btn btn-info mb-2" ><NavLink style={{ color: "white", textDecoration: "none" }} to={'/update'}> update</NavLink>
 
                                             </button>
                                         </div>
