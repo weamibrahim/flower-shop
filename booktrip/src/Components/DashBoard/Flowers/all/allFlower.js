@@ -1,9 +1,9 @@
 import { Component } from "react"
 import { NavLink } from "react-router-dom";
 import Sidebar from "../../sidebar/sidebar";
-import "./alltour.css"
+import "./allFlower.css"
 import { BsSearch } from "react-icons/bs";
-class Alltour extends Component {
+class AllFlower extends Component {
     constructor() {
         super();
         this.state = {
@@ -44,7 +44,7 @@ class Alltour extends Component {
             
             <div className="d-flex justify-content-center " >
             <Sidebar/>
-         <div className="container-fluid bg  ">   <button className="btn btn-info my-3"><NavLink to="addtour"   className="text-decoration-none text-white"  >Add flower</NavLink> </button>
+         <div className="container-fluid bg  ">   <button className="btn btn-info my-3"><NavLink to="addflower"   className="text-decoration-none text-white"  >Add flower</NavLink> </button>
 <span style={{marginLeft:"600px"}}>
          <BsSearch className='icons mx-3'/>
       <input  style={{width:"400px",height:"50px",border:"4px solid #ff58b9",borderRadius:"10px" }}
@@ -77,7 +77,7 @@ class Alltour extends Component {
     <td><img style={{width:"50px", height:"50px"}} src={'http://localhost:7000/images/'+flower.image}/></td>
     <td>{flower.price}</td>
     <td><button className="btn btn-danger mx-2" onClick={() => this.handleDelete(flower._id)}>delete</button>
-    <button className="btn btn-success"><NavLink to={`updatetour/${flower._id}`}  className="text-decoration-none text-white">Update </NavLink>    </button>
+    <button className="btn btn-success"><NavLink to={`updateflower/${flower._id}`}  className="text-decoration-none text-white">Update </NavLink>    </button>
     
     
     </td>
@@ -89,4 +89,4 @@ class Alltour extends Component {
 </div>
            </div>
             </div>)}}
-export default Alltour
+export default AllFlower

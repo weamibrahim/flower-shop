@@ -4,10 +4,10 @@ import Home from "./Components/pages/home/home";
 import About from "./Components/pages/about/about";
 import Header from './Components/Header/header';
 import Footer from './Components/Footer/footer';
-import Tour from './Components/pages/tour/tour';
+import Flowers from './Components/pages/flowers/flowers';
 import Login from './Components/pages/login/login';
 import Signup from "./Components/pages/signup/signup";
-import TourDetail from "./Components/pages/tourDetails/tourDetails";
+import FlowerDetail from "./Components/pages/flowerDetails/flowerDetails";
 import Profile from "./Components/pages/profile/profile"
 import Cart from "./Components/pages/cart/cart";
 import UpdateProfile from "./Components/pages/updateProfile/update";
@@ -16,10 +16,10 @@ import Checkout from "./Components/pages/checkout/checkout";
 
 
 import DashBoard from "./Components/DashBoard/dashboard";
-import Alltour from "./Components/DashBoard/Tours/all/alltour";
+import AllFlower from "./Components/DashBoard/Flowers/all/allFlower";
 import Alluser from "./Components/DashBoard/users/all/alluser";
-import Addtour from "./Components/DashBoard/Tours/create/addtour";
-import Updatetour from "./Components/DashBoard/Tours/update/updatetour";
+import AddFlower from "./Components/DashBoard/Flowers/create/addFlower";
+import UpdateFlower from "./Components/DashBoard/Flowers/update/updateFlower";
 import Error from "./Components/pages/error/error";
 
 
@@ -42,12 +42,12 @@ function App() {
                        <>
                     <Route path="/dashboard/*" element={<DashBoard />} />
                     <Route path="dashboard/alluser" element={<Alluser />} />
-                    <Route path="dashboard/alltour" element={<Alltour />} />
+                    <Route path="dashboard/allflower" element={<AllFlower />} />
 
-                    <Route path="dashboard/alltour/addtour" element={<Addtour />} />
+                    <Route path="dashboard/allflower/addflower" element={<AddFlower />} />
 
 
-                    <Route path="dashboard/alltour/updatetour/:id" element={<Updatetour />} />
+                    <Route path="dashboard/allflower/updateflower/:id" element={<UpdateFlower />} />
 </>
 
                     ) : (
@@ -63,9 +63,9 @@ function App() {
                     <Route path="/profile" element={loggedIn ? <Profile /> : <Navigate to="/login" />} />
                     <Route path="/update" element={loggedIn ? <UpdateProfile /> : <Navigate to="/login" />} />
                     {/* Use a function to conditionally navigate */}
-                    <Route path="/tour" element={<Tour />} />
+                    <Route path="/flowers" element={<Flowers />} />
                     
-                    <Route path="/tour/:id" element={loggedIn ?<TourDetail />: <Navigate to="/login"/>} />
+                    <Route path="/flower/:id" element={loggedIn ?<FlowerDetail />: <Navigate to="/login"/>} />
                     <Route path="/cart"element={loggedIn ? <Cart /> : <Navigate to="/login"/>}/>
                     <Route path="/checkout"element={<Checkout/>}/>
                     <Route path="*" element={<Error />} />

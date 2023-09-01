@@ -31,7 +31,7 @@ const Sidebar = () => {
         <NavLink to="/dashboard/alluser" className="text-decoration-none text-black mx-3 my-2">
           USER
         </NavLink>
-        <NavLink to="/dashboard/alltour" className="text-decoration-none text-black mx-3 my-2">
+        <NavLink to="/dashboard/allflower" className="text-decoration-none text-black mx-3 my-2">
           FLOWER
         </NavLink>
 

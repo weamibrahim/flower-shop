@@ -40,7 +40,7 @@ function Header() {
                     <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/about">About </NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/tour">Flower </NavLink>
+                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/flowers">Flower </NavLink>
                   </li>
                   <li className="nav-item">
                     <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/profile"><BsFillPersonFill className="icone" /></NavLink>
@@ -59,7 +59,7 @@ function Header() {
                     <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/about">About </NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/tour">Flower </NavLink>
+                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/flowers">Flower </NavLink>
                   </li>
                   <li className="nav-item">
                     <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/profile"><BsFillPersonFill className="icone" /></NavLink>

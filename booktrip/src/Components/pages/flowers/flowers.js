@@ -1,9 +1,9 @@
 import React from 'react';
 import { Component } from "react";
 import { NavLink } from "react-router-dom";
-import "./tour.css"
+import "./flowers.css"
 import { BsSearch } from "react-icons/bs"
-class Tour extends Component {
+class Flowers extends Component {
   constructor() {
     super();
     this.state = {
@@ -117,7 +117,7 @@ class Tour extends Component {
 
 
 
-                      <button className='btn btn-info'><NavLink style={{ color: "white", textDecoration: "none" }} to={`/tour/${flower._id}`}>read more</NavLink>
+                      <button className='btn btn-info'><NavLink style={{ color: "white", textDecoration: "none" }} to={`/flower/${flower._id}`}>read more</NavLink>
                       </button>
                     </div>
                   </div>
@@ -147,4 +147,4 @@ class Tour extends Component {
 
 }
 
-export default Tour;
+export default Flowers;

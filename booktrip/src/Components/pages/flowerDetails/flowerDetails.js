@@ -1,8 +1,8 @@
 
 import { useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
-import "./tourDetail.css"
-const TourDetail = () => {
+import "./flowerDetail.css"
+const FlowerDetail = () => {
 
 
   let { id } = useParams();
@@ -69,4 +69,4 @@ const TourDetail = () => {
   );
 
 }
-export default TourDetail;
+export default FlowerDetail;
