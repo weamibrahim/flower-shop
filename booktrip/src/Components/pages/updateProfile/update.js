@@ -26,7 +26,7 @@ function UpdateProfile() {
     const handleUpdate = async () => {
         try {
             // console.log(formData);
-            const response = await fetch(`http://localhost:7000/api/users/update/${userData._id}`, {
+            const response = await fetch(`https://flowershop-bw6z.onrender.com/api/users/update/${userData._id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

@@ -17,7 +17,7 @@ class Alluser extends Component {
     this.setState({ searchQuery: event.target.value });
   };
   componentDidMount() {
-    fetch("http://localhost:7000/api/users/alluser")
+    fetch("https://flowershop-bw6z.onrender.com/api/users/alluser")
       .then((response) => { return response.json(); })
       .then((data) => {
         console.log(data);
@@ -29,7 +29,7 @@ class Alluser extends Component {
   handleDelete = (id) => {
     console.log(id);
     // Make a DELETE request to the server to delete the user
-    fetch(`http://localhost:7000/api/users/delete/${id}`, {
+    fetch(`https://flowershop-bw6z.onrender.com/api/users/delete/${id}`, {
       method: "DELETE",
     })
       .then((response) => response.json())

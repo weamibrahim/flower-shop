@@ -13,7 +13,7 @@ function UpdateFlower() {
 
     useEffect(() => {
         // Fetch flower data from API and populate the form
-        fetch(`http://localhost:7000/api/flower/${id}`)
+        fetch(`https://flowershop-bw6z.onrender.com/api/flower/${id}`)
             .then((response) => { return response.json() }
 
 
@@ -54,7 +54,7 @@ function UpdateFlower() {
         formData.append('image', flowerData.image);
 
         // Make the API call to update the flower
-        fetch(`http://localhost:7000/api/flower/update/${id}`, {
+        fetch(`https://flowershop-bw6z.onrender.com/api/flower/update/${id}`, {
             method: 'PUT',
 
             body: formData

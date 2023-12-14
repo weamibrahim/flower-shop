@@ -12,7 +12,7 @@ function Cart() {
 
   const getCart = async (userId) => {
     try {
-      const response = await fetch(`http://localhost:7000/api/cart/${userId}`, {
+      const response = await fetch(`https://flowershop-bw6z.onrender.com/api/cart/${userId}`, {
 
         method: 'GET',
         headers: {
@@ -38,7 +38,7 @@ function Cart() {
     console.log('flowerIdString:', flowerIdString);
     try {
       const response = await fetch(
-        `http://localhost:7000/api/cart/${action}/${userId}/${flowerIdString}`,
+        `https://flowershop-bw6z.onrender.com/api/cart/${action}/${userId}/${flowerIdString}`,
         {
           method: 'PUT', // or 'DELETE' for remove
           headers: {
@@ -93,7 +93,7 @@ function Cart() {
             <tbody>
               <tr key={item.flowerId._id} className="text-center">
                 <td >
-                  <img style={{ width: "50px", height: "50px" }} src={'http://localhost:7000/images/'+item.flowerId.image} />             </td>
+                  <img style={{ width: "50px", height: "50px" }} src={'https://flowershop-bw6z.onrender.com/images/'+item.flowerId.image} />             </td>
                 <td >
                   {item.flowerId.name}
                 </td>

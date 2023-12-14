@@ -12,7 +12,7 @@ class AllFlower extends Component {
         }
       }
       componentDidMount() {
-        fetch("http://localhost:7000/api/flower/flowers")
+        fetch("https://flowershop-bw6z.onrender.com/api/flower/flowers")
           .then((response) => { return response.json(); })
           .then((data) => {
             console.log(data);
@@ -27,7 +27,7 @@ class AllFlower extends Component {
       handleDelete = (id) => {
         console.log(id);
         // Make a DELETE request to the server to delete the flower
-        fetch(`http://localhost:7000/api/flower/delete/${id}`, {
+        fetch(`https://flowershop-bw6z.onrender.com/api/flower/delete/${id}`, {
           method: "DELETE",
         })
           .then((response) => response.json())
@@ -74,7 +74,7 @@ class AllFlower extends Component {
   <tr key={flower.id}>
     
     <td>{flower.name}</td>
-    <td><img style={{width:"50px", height:"50px"}} src={'http://localhost:7000/images/'+flower.image}/></td>
+    <td><img style={{width:"50px", height:"50px"}} src={'https://flowershop-bw6z.onrender.com/images/'+flower.image}/></td>
     <td>{flower.price}</td>
     <td><button className="btn btn-danger mx-2" onClick={() => this.handleDelete(flower._id)}>delete</button>
     <button className="btn btn-success"><NavLink to={`updateflower/${flower._id}`}  className="text-decoration-none text-white">Update </NavLink>    </button>

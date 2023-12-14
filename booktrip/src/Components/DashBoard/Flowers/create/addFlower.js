@@ -39,7 +39,7 @@ function AddFlower() {
         event.preventDefault();
 
         // Make the API call to create a new flower
-        fetch(`http://localhost:7000/api/flower/create`, {
+        fetch(`https://flowershop-bw6z.onrender.com/api/flower/create`, {
             method: 'POST',
 
             body: formData

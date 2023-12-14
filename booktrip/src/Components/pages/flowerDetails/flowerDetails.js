@@ -9,7 +9,7 @@ const FlowerDetail = () => {
   console.log(id);
   let [flower, setflower] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:7000/api/flower/${id}`)
+    fetch(`https://flowershop-bw6z.onrender.com/api/flower/${id}`)
       .then((response) => { return response.json(); })
       .then((data) => {
         //console.log(data);
@@ -24,7 +24,7 @@ const FlowerDetail = () => {
     const quantity = 1; // You can adjust the quantity as needed
     console.log(userId, flowerId, quantity);
     try {
-      const response = await fetch("http://localhost:7000/api/cart/add-item", {
+      const response = await fetch("https://flowershop-bw6z.onrender.com/api/cart/add-item", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -50,7 +50,7 @@ const FlowerDetail = () => {
     <div className="container my-5 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
       <div className="row">
         <div className="col-md-6 mb-4">
-          <img src={'http://localhost:7000/images/' + flower.image} style={{ maxWidth: "500px", maxHeight: "500px" }} alt="flower.name" className="img-fluid rounded-circle" />
+          <img src={'https://flowershop-bw6z.onrender.com/images/' + flower.image} style={{ maxWidth: "500px", maxHeight: "500px" }} alt="flower.name" className="img-fluid rounded-circle" />
         </div>
         <div className="col-md-6">
           {flower.des}

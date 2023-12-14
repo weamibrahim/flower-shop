@@ -15,7 +15,7 @@ function PaymentForm() {
 
   const getCart = async (userId) => {
     try {
-      const response = await fetch(`http://localhost:7000/api/cart/${userId}`, {
+      const response = await fetch(`https://flowershop-bw6z.onrender.com/api/cart/${userId}`, {
 
         method: 'GET',
         headers: {
@@ -62,7 +62,7 @@ function PaymentForm() {
     const totalPrice = calculateTotalPrice(); // Calculate total price here
     const formDataWithAmount = { ...formData, amount: totalPrice }; // Set amount dynamically
     try {
-      const response = await fetch('http://localhost:7000/api/charge/payment', {
+      const response = await fetch('https://flowershop-bw6z.onrender.com/api/charge/payment', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
