@@ -3,7 +3,7 @@ require("dotenv").config();
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const charge = async (req, res) => {
-  console.log(req.body)
+  
 
   try {
     const token = await stripe.tokens.create({
@@ -14,9 +14,9 @@ const charge = async (req, res) => {
           cvc:req.body.cvv
         }
     });
-    console.log(token)
+    console.log(req.body)
     await stripe.charges.create({
-        amount: 2000,
+        amount: req.body.amount ,
         currency: "usd",
         description: "An example charge",
         source: token.id

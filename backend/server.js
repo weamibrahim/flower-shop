@@ -12,8 +12,8 @@ const orderRoutes=require("./Router/OrderRoutes")
 require("dotenv").config();
 
 const PORT = process.env.PORT || 7000;
-const mongoURI = "mongodb://127.0.0.1:27017/ecomerce";
-
+// const mongoURI = "mongodb://127.0.0.1:27017/ecomerce";
+const mongoURI = process.env.MONGO_URI;
 const accessTokenSecret = process.env.ACCESS_TOKEN_SECRET;
 
 app.use(bodyParser.json());
@@ -26,6 +26,7 @@ app.use(cors()); // Enable CORS
 
 
 app.use("/api/users",userRoutes);
+
 
 
 app.use("/api/Flower",FlowerRoutes);

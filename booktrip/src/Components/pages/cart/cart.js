@@ -140,7 +140,12 @@ function Cart() {
       </table>
       <div className="row d-flex justify-content-center" >
         <p className="text-center">Total Price: {calculateTotalPrice()} LE</p>
-        <button className="btn btn-info px-2 " style={{ width: '200px' }}  ><NavLink style={{ color: "white", textDecoration: "none" }} to="/checkout"> Checkout </NavLink></button>
+        <button className="btn btn-info px-2 " style={{ width: '200px' }}  >
+          <NavLink style={{ color: "white", textDecoration: "none" }} 
+           to={{
+            pathname: "/checkout",
+           // search: `?totalPrice=${calculateTotalPrice()}`, // Pass the total price as a query parameter
+          }}> Checkout </NavLink></button>
       </div>
     </div>
 

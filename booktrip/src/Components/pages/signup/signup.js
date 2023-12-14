@@ -38,12 +38,12 @@ function Signup() {
 
       if (response.ok) {
         localStorage.setItem('userData', JSON.stringify(data.user));
-        localStorage.setItem('accessToken', data.accessToken);
-        localStorage.setItem('userId', data.userId); 
+        //localStorage.setItem('accessToken', data.accessToken);
+        
         // Registration successful
 
         // Redirect to the login page or another page
-        window.location.href = '/home';
+        window.location.href = '/login';
       } else {
         // Registration failed
         const message = data.message;
