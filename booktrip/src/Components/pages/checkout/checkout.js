@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./checkout.css";
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+
 function PaymentForm() {
 
 

@@ -40,7 +40,7 @@ mongoose.connection.on("connected", () => {
 
 
 app.get("/", (req, res) => {
-  res.send("PlatePalate backend!");
+  res.send("Hello backend!");
 });
 
 app.listen(PORT, () => {
