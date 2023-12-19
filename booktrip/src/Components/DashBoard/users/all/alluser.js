@@ -1,6 +1,7 @@
 import { Component } from "react"
 import Sidebar from "../../sidebar/sidebar";
 import { BsSearch } from "react-icons/bs";
+import { MdDelete } from "react-icons/md";
 import "./alluser.css"
 class Alluser extends Component {
 
@@ -47,13 +48,14 @@ class Alluser extends Component {
           <Sidebar />
           <div className="container-fluid bgu">
             <span >
-              <BsSearch className='icons ' />
-              <input style={{ width: "400px", height: "50px", border: "4px solid #ff58b9", borderRadius: "10px" }} className="my-3"
+              {/* <BsSearch className='icons ' /> */}
+              <input style={{maxWidth: "400px", height: "50px", border: "4px solid #ff58b9", borderRadius: "10px" }} className="my-3"
                 type="text"
                 placeholder="Search by name or email"
                 value={this.state.searchQuery}
                 onChange={this.handleSearchInputChange}
               /></span>
+              <div className="table-responsive">
             <table class="table my-3 ">
               <thead>
                 <tr>
@@ -76,7 +78,7 @@ class Alluser extends Component {
                       <td>{user.email}</td>
                       <td>{user.address}</td>
                       <td>{user.mobile}</td>
-                      <td><button className="btn btn-danger" onClick={() => this.handleDelete(user._id)}>delete</button>
+                      <td><button className="btn btn-danger" onClick={() => this.handleDelete(user._id)}><MdDelete  className='fs-2'/></button>
 
 
 
@@ -86,6 +88,7 @@ class Alluser extends Component {
                   </tbody>
                 ))}
             </table>
+            </div>
           </div>
         </div>
       </div>)

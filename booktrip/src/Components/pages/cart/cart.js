@@ -49,10 +49,7 @@ function Cart() {
       const data = await response.json();
       setCart(data);
 
-      // xxxxxxxxxxxxxxxxxxxxxxxxxxx   it work but when click incement the img and name dis apear and need to refersh to apear xxxxxxxxxxx
-      //  you should make sure to update the local state 
-      //with the updated cart data after each action. 
-      //You can do this by calling the getCart function again after a successful 
+      
 
       getCart(userId);
     } catch (error) {
@@ -73,8 +70,8 @@ function Cart() {
 
   return (
     <div className="container-fluid">
-
-      <table class="table table-striped">
+<div className="table-responsive">
+      <table className="table table-striped ">
 
         <thead>
           <tr className="text-center">
@@ -109,13 +106,13 @@ function Cart() {
               <button className="btn btn-danger px-2"  onClick={() => decrementItemQuantity(item.flowerId)}>-</button>
               <button className="btn btn-link text-danger" onClick={() => removeItemFromCart(item.flowerId)}>Remove</button> */}
                   <button
-                    className="btn btn-success px-2"
+                    className="btn btn-success px-2 "
                     onClick={() => updateCartAfterActions(item.flowerId, 'increment-item')}
                   >
                     +
                   </button>
                   <button
-                    className="btn btn-info px-2 mx-4"
+                    className="btn btn-info px-2 mx-4 my-2"
                     onClick={() => updateCartAfterActions(item.flowerId, 'decrement-item')}
                   >
                     -
@@ -138,9 +135,10 @@ function Cart() {
             </tbody>
           ))}
       </table>
+      </div>
       <div className="row d-flex justify-content-center" >
         <p className="text-center">Total Price: {calculateTotalPrice()} LE</p>
-        <button className="btn btn-info px-2 " style={{ width: '200px' }}  >
+        <button className="btn btn-info px-2 my-4" style={{ width: '200px' }}  >
           <NavLink style={{ color: "white", textDecoration: "none" }} 
            to={{
             pathname: "/checkout",

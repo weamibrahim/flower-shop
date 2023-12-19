@@ -57,10 +57,7 @@ function AddFlower() {
     };
 
     return (
-        /* The code you provided is rendering a form for creating a new flower. It includes input fields for
-        the flower's name, bio, cover, and genre. The values of these input fields are controlled by the
-        `flowerData` state variable, and any changes to the input fields will trigger the
-        `handleInputChange` function to update the `flowerData` state. */
+       
         <div>
 
 

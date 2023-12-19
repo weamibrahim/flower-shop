@@ -2,32 +2,32 @@ const User = require('../models/user');
 
 const userController = {};
 userController.updateUserById = async (req, res, next) => {
-    try {
+  try {
       const { id } = req.params;
-     
-      const { user_name, email, password,  userImage, gender, role, mobile, address } = req.body;
+      const { user_name, email, password, userImage, gender, role, mobile, address } = req.body;
+      console.log(req.body);
 
       const user = await User.findById(id);
       if (!user) {
-        return res.status(404).json({ message: 'User not found' });
+          return res.status(404).json({ message: 'User not found' });
       }
-  
-      user.user_name = user_name !== undefined ? user_name : user.name;
-      user.email = email !== undefined ? email : user.email;
-      user.password = password !== undefined ? password : user.password;
-     
-   user.gender = gender !== undefined ? gender : user.gender;
-   user.role = role !== undefined ? role : user.role;
-   user.mobile = mobile !== undefined ? mobile : user.mobile;
-   user.address = address !== undefined ? address : user.address;
-  
+
+      user.user_name = user_name ?? user.user_name;
+      user.email = email ?? user.email;
+      user.password = password ?? user.password;
+      user.gender = gender ?? user.gender;
+      user.role = role ?? user.role;
+      user.mobile = mobile ?? user.mobile;
+      user.address = address ?? user.address;
+
       const updatedUser = await user.save();
-  
+
       res.status(200).json({ message: 'User updated successfully', user: updatedUser });
-    } catch (err) {
+  } catch (err) {
       next(err);
-    }
-  };
+  }
+};
+
   userController.getAllUsers = async (req, res, next) => {
     try {
       const users = await User.find();

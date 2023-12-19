@@ -23,14 +23,15 @@ function UpdateProfile() {
         }));
     };
 
-    const handleUpdate = async () => {
+    const handleUpdate = async (e) => {
+        e.preventDefault();
         try {
             // console.log(formData);
             const response = await fetch(`https://flowershop-bw6z.onrender.com/api/users/update/${userData._id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
+                   
                 },
                 body: JSON.stringify(formData),
 

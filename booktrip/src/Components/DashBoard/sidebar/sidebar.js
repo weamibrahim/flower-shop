@@ -23,8 +23,8 @@ const Sidebar = () => {
 
   return (
 
-    <div >
-      <div className="list-group list-group-flush my-3">
+  
+      <div className="d-flex flex-column ">
         <NavLink to="/dashboard" className="text-decoration-none text-black mx-3 my-2">
           HOME
         </NavLink>
@@ -39,7 +39,7 @@ const Sidebar = () => {
           Logout
         </NavLink>
       </div>
-    </div>
+    
 
   );
 };
