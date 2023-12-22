@@ -40,6 +40,9 @@ function Header() {
                     <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/about">About </NavLink>
                   </li>
                   <li className="nav-item">
+                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/contactus">ContactUs </NavLink>
+                  </li>
+                  <li className="nav-item">
                     <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/flowers">Flower </NavLink>
                   </li>
                   <li className="nav-item">
@@ -57,6 +60,9 @@ function Header() {
                   </li>
                   <li className="nav-item">
                     <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/about">About </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/contactus">ContactUs </NavLink>
                   </li>
                   <li className="nav-item">
                     <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/flowers">Flower </NavLink>
