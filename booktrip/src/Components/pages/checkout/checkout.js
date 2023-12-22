@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import "./checkout.css";
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function PaymentForm() {
 
 
-
+const navigate = useNavigate();
   const [cart, setCart] = useState({});
   const userId = JSON.parse(localStorage.getItem('userData'))._id;
 
@@ -59,8 +60,8 @@ function PaymentForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setIsLoading(true);
-    const totalPrice = calculateTotalPrice(); // Calculate total price here
-    const formDataWithAmount = { ...formData, amount: totalPrice }; // Set amount dynamically
+    const totalPrice = calculateTotalPrice();
+    const formDataWithAmount = { ...formData, amount: totalPrice }; 
     try {
       const response = await fetch('https://flowershop-bw6z.onrender.com/api/charge/payment', {
         method: 'POST',
@@ -74,14 +75,14 @@ function PaymentForm() {
         const data = await response.json();
         alert("Your order is about to be delivered")
         console.log(data.message);
-        window.location.href = "home";// "Your order is about to be delivered"
+        navigate("/home");
       } else {
         console.error('Failed to process payment');
-        // Handle error message or show a notification to the user
+       
       }
     } catch (error) {
       console.error(error);
-      // Handle error message or show a notification to the user
+    
     }
 
     setIsLoading(false);

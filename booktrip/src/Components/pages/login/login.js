@@ -1,7 +1,8 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./login.css"
 import { useState } from "react";
 function Login() {
+  const navigate = useNavigate()
   const [email, setEmail] = useState('');
 
   const [password, setPassword] = useState('');
@@ -22,32 +23,29 @@ function Login() {
       const data = await response.json();
       console.log(data)
       if (response.ok) {
-        // Login successful
-
-        // Store user data and token in local storage
+   
         localStorage.setItem('userData', JSON.stringify(data.user));
         localStorage.setItem('accessToken', data.accessToken);
         console.log(data);
         const userRole = data.user.role
 
 
-        // window.location.href="./home"
         if (userRole === 'admin') {
-          // Redirect admin to the dashboard
-          window.location.href = '/dashboard';
+         
+          navigate('/dashboard');
         } else if (userRole === 'user') {
-          // Redirect user to the home page
-          window.location.href = '/home';
+        
+          navigate('/home');
         }
       } else {
-        // Login failed
+    
         const message = data.message;
         setErrorMessage(`Login failed: ${message}`);
       }
     } catch (error) {
       console.error('Error:', error);
     }
-    // Implement your signup logic here
+    
 
   };
   return (

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import Sidebar from "../../sidebar/sidebar";
+import './updateFlower.css';
 function UpdateFlower() {
+    const navigate = useNavigate();
     let { id } = useParams();
     console.log(id);
     const [flowerData, setflowerData] = useState({
@@ -61,10 +63,10 @@ function UpdateFlower() {
         })
             .then((response) => response.json())
             .then((data) => {
-                // Handle successful update, e.g., redirect to flowers page
+
                 console.log('flower updated:', data);
-                // Redirect to the flowers page after successful update
-                window.location.href = '/dashboard/allflower'; // Change this to the correct URL for your flowers page
+
+                navigate('/dashboard/allflower');
             })
             .catch((error) => {
                 console.error('Error updating flower:', error);
@@ -72,14 +74,18 @@ function UpdateFlower() {
     };
 
     return (
-        <div>
+        < div>
             <div className="d-flex justify-content-center">
                 <Sidebar />
-                <div className='container-fluid bg'>
-                    <h2 className='text-center'>Update flower</h2>
-                    <div className='d-flex justify-content-center'>
-                        <form onSubmit={handleSubmit} style={{ boxShadow: " 5px 5px 5px 5px #c8c8c8", padding: "10px", width: "500px" }} className='my-5' encType="multipart/form-data">
+                <div className="container-fluid bgform ">
+                    <h2 className="text-center"> update flower </h2>
+                    <div className="d-flex justify-content-center">
+                        <form
+                            onSubmit={handleSubmit}
+                            className="flower-form my-5"
+                            encType="multipart/form-data"
 
+                        >
                             <label>Image: </label>
                             <input
                                 className='form-control mb-3'
@@ -87,7 +93,7 @@ function UpdateFlower() {
                                 name="image"
                                 accept="image/*"
 
-                                onChange={handleImageChange} // You need to implement this function
+                                onChange={handleImageChange}
                             />
                             <br />
 
@@ -127,6 +133,7 @@ function UpdateFlower() {
                 </div>
             </div>
         </div>
+
     );
 }
 

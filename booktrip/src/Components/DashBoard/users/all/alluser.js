@@ -49,45 +49,45 @@ class Alluser extends Component {
           <div className="container-fluid bgu">
             <span >
               {/* <BsSearch className='icons ' /> */}
-              <input style={{maxWidth: "400px", height: "50px", border: "4px solid #ff58b9", borderRadius: "10px" }} className="my-3"
+              <input style={{ maxWidth: "400px", height: "50px", border: "4px solid #ff58b9", borderRadius: "10px" }} className="my-3"
                 type="text"
                 placeholder="Search by name or email"
                 value={this.state.searchQuery}
                 onChange={this.handleSearchInputChange}
               /></span>
-              <div className="table-responsive">
-            <table class="table my-3 ">
-              <thead>
-                <tr>
+            <div className="table-responsive">
+              <table class="table my-3 ">
+                <thead>
+                  <tr>
 
-                  <th scope="col">name</th>
-                  <th scope="col">email</th>
-                  <th scope="col">address</th>
-                  <th scope="col">phone</th>
-                  <th>action</th>
-                </tr>
-              </thead>
-              {this.state.users.filter( user =>
-            (user.name && user.name.toLowerCase().includes(this.state.searchQuery.toLowerCase())) ||
-            (user.email && user.email.toString().includes(this.state.searchQuery)))
-                .map((user) => (
-                  <tbody >
-                    <tr key={user.id}>
+                    <th scope="col">name</th>
+                    <th scope="col">email</th>
+                    <th scope="col">address</th>
+                    <th scope="col">phone</th>
+                    <th>action</th>
+                  </tr>
+                </thead>
+                {this.state.users.filter(user =>
+                  (user.name && user.name.toLowerCase().includes(this.state.searchQuery.toLowerCase())) ||
+                  (user.email && user.email.toString().includes(this.state.searchQuery)))
+                  .map((user) => (
+                    <tbody >
+                      <tr key={user.id}>
 
-                      <td>{user.user_name}</td>
-                      <td>{user.email}</td>
-                      <td>{user.address}</td>
-                      <td>{user.mobile}</td>
-                      <td><button className="btn btn-danger" onClick={() => this.handleDelete(user._id)}><MdDelete  className='fs-2'/></button>
+                        <td>{user.user_name}</td>
+                        <td>{user.email}</td>
+                        <td>{user.address}</td>
+                        <td>{user.mobile}</td>
+                        <td><button className="btn btn-danger" onClick={() => this.handleDelete(user._id)}><MdDelete className='fs-2' /></button>
 
 
 
-                      </td>
-                    </tr>
+                        </td>
+                      </tr>
 
-                  </tbody>
-                ))}
-            </table>
+                    </tbody>
+                  ))}
+              </table>
             </div>
           </div>
         </div>

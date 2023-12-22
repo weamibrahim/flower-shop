@@ -2,8 +2,10 @@
 import React from 'react';
 import { useState } from "react";
 import Sidebar from '../../sidebar/sidebar';
-
+import "./addFlower.css"
+import { useNavigate } from 'react-router-dom';
 function AddFlower() {
+    const navigate = useNavigate();
     const [flowerData, setflowerData] = useState({
         name: '',
         des: '',
@@ -46,10 +48,10 @@ function AddFlower() {
         })
             .then((response) => response.json())
             .then((data) => {
-                // Handle successful creation, e.g., redirect to flowers page
+
                 // console.log('flower created:', data);
-                // Redirect to the flowers page after successful creation
-            window.location.href = '/dashboard/allflower'; // Change this to the correct URL for your flowers page
+
+                navigate('/dashboard/allflower');
             })
             .catch((error) => {
                 console.error('Error creating flower:', error);
@@ -57,25 +59,29 @@ function AddFlower() {
     };
 
     return (
-       
+
+
+
+
         <div>
-
-
-
             <div className="d-flex justify-content-center">
                 <Sidebar />
-                <div className='container-fluid bg '>
-                    <h2 className='text-center'> Create New </h2>
-                    <div className='d-flex justify-content-center'>
-                        <form onSubmit={handleSubmit} style={{ boxShadow: " 5px 5px 5px 5px #c8c8c8", padding: "10px", width: "500px" }} className='my-5' encType="multipart/form-data">
+                <div className="container-fluid bgform ">
+                    <h2 className="text-center"> Create New </h2>
+                    <div className="d-flex justify-content-center">
+                        <form
+                            onSubmit={handleSubmit}
+                            className="flower-form my-5"
+                            encType="multipart/form-data"
 
+                        >
                             <label>Image: </label>
                             <input
                                 className='form-control mb-3'
                                 type="file"
                                 name="image"
                                 accept="image/*"
-                                onChange={handleImageChange} // You need to implement this function
+                                onChange={handleImageChange}
                             />
                             <br />
 

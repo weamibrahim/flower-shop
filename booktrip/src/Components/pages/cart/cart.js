@@ -49,7 +49,7 @@ function Cart() {
       const data = await response.json();
       setCart(data);
 
-      
+
 
       getCart(userId);
     } catch (error) {
@@ -70,80 +70,80 @@ function Cart() {
 
   return (
     <div className="container-fluid">
-<div className="table-responsive">
-      <table className="table table-striped ">
+      <div className="table-responsive">
+        <table className="table table-striped ">
 
-        <thead>
-          <tr className="text-center">
-            <th scope="col">image</th>
-            <th scope="col">name</th>
+          <thead>
+            <tr className="text-center">
+              <th scope="col">image</th>
+              <th scope="col">name</th>
 
-            <th scope="col">price </th>
-            <th scope="col">quantity</th>
-            <th scope="col">total price</th>
-            <th>action</th>
-          </tr>
-        </thead>
+              <th scope="col">price </th>
+              <th scope="col">quantity</th>
+              <th scope="col">total price</th>
+              <th>action</th>
+            </tr>
+          </thead>
 
-        {cart.items &&
-          cart.items.map((item) => (
-            <tbody>
-              <tr key={item.flowerId._id} className="text-center">
-                <td >
-                  <img style={{ width: "50px", height: "50px" }} src={'https://flowershop-bw6z.onrender.com/images/'+item.flowerId.image} />             </td>
-                <td >
-                  {item.flowerId.name}
-                </td>
-                <td >
-                  {item.flowerId.price}LE
-                </td>
-                <td >
-                  {item.quantity}</td>
-                < td >
-                  {item.quantity * item.flowerId.price}</td>
-                <td >
-                  {/* <button className="btn btn-primary px-2" onClick={() => incrementItemQuantity(item.flowerId)}>+</button>
+          {cart.items &&
+            cart.items.map((item) => (
+              <tbody>
+                <tr key={item.flowerId._id} className="text-center">
+                  <td >
+                    <img style={{ width: "50px", height: "50px" }} src={'https://flowershop-bw6z.onrender.com/images/' + item.flowerId.image} />             </td>
+                  <td >
+                    {item.flowerId.name}
+                  </td>
+                  <td >
+                    {item.flowerId.price}LE
+                  </td>
+                  <td >
+                    {item.quantity}</td>
+                  < td >
+                    {item.quantity * item.flowerId.price}</td>
+                  <td >
+                    {/* <button className="btn btn-primary px-2" onClick={() => incrementItemQuantity(item.flowerId)}>+</button>
               <button className="btn btn-danger px-2"  onClick={() => decrementItemQuantity(item.flowerId)}>-</button>
               <button className="btn btn-link text-danger" onClick={() => removeItemFromCart(item.flowerId)}>Remove</button> */}
-                  <button
-                    className="btn btn-success px-2 "
-                    onClick={() => updateCartAfterActions(item.flowerId, 'increment-item')}
-                  >
-                    +
-                  </button>
-                  <button
-                    className="btn btn-info px-2 mx-4 my-2"
-                    onClick={() => updateCartAfterActions(item.flowerId, 'decrement-item')}
-                  >
-                    -
-                  </button>
-                  <button
-                    className="btn text-danger  px-2"
-                    onClick={() => updateCartAfterActions(item.flowerId, 'remove-item')}
-                  >
-                    <AiTwotoneDelete style={{ fontSize: "50px" }} />
-                  </button>
+                    <button
+                      className="btn btn-success px-2 "
+                      onClick={() => updateCartAfterActions(item.flowerId, 'increment-item')}
+                    >
+                      +
+                    </button>
+                    <button
+                      className="btn btn-info px-2 mx-4 my-2"
+                      onClick={() => updateCartAfterActions(item.flowerId, 'decrement-item')}
+                    >
+                      -
+                    </button>
+                    <button
+                      className="btn text-danger  px-2"
+                      onClick={() => updateCartAfterActions(item.flowerId, 'remove-item')}
+                    >
+                      <AiTwotoneDelete style={{ fontSize: "50px" }} />
+                    </button>
 
 
 
 
 
 
-                </td>
-              </tr>
+                  </td>
+                </tr>
 
-            </tbody>
-          ))}
-      </table>
+              </tbody>
+            ))}
+        </table>
       </div>
       <div className="row d-flex justify-content-center" >
         <p className="text-center">Total Price: {calculateTotalPrice()} LE</p>
         <button className="btn btn-info px-2 my-4" style={{ width: '200px' }}  >
-          <NavLink style={{ color: "white", textDecoration: "none" }} 
-           to={{
-            pathname: "/checkout",
-           // search: `?totalPrice=${calculateTotalPrice()}`, // Pass the total price as a query parameter
-          }}> Checkout </NavLink></button>
+          <NavLink style={{ color: "white", textDecoration: "none" }}
+            to={{
+              pathname: "/checkout",
+              // search: `?totalPrice=${calculateTotalPrice()}`, // Pass the total price as a query parameter
+            }}> Checkout </NavLink></button>
       </div>
     </div>
 

@@ -19,7 +19,7 @@ function Profile() {
             </div>
 
             <div style={{ textAlign: "center" }}>
-                <div className="container" style={{maxWidth: " 800px" }}>
+                <div className="container" style={{ maxWidth: " 800px" }}>
                     <div className=" justify-content-center align-items-center" >
                         <div className="row ">
 

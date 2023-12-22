@@ -32,110 +32,110 @@ exports.getCart = async (req, res) => {
 
 
 
-  exports.addItemToCart = async (req, res) => {
+exports.addItemToCart = async (req, res) => {
 
-    try {
+  try {
 
-      const { userId, flowerId, quantity } = req.body;
+    const { userId, flowerId, quantity } = req.body;
 
-      // Check if userId is a valid ObjectId
+    // Check if userId is a valid ObjectId
     const mongoose = require('mongoose');
     if (!mongoose.Types.ObjectId.isValid(userId)) {
       return res.status(400).json({ message: 'Invalid userId' });
     }
 
 
-      let cart = await Cart.findOne({ userId });
-      if (!cart) {
-        cart = new Cart({ userId, items: [] });
-      }
-      const itemIndex = cart.items.findIndex((item) => item.flowerId.equals(flowerId));
-      if (itemIndex >= 0) {
-        cart.items[itemIndex].quantity += quantity;
-      } else {
-        cart.items.push({ flowerId, quantity });
-      }
-      const updatedCart = await cart.save();
-      res.status(201).json(updatedCart);
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ message: 'Internal server error' });
+    let cart = await Cart.findOne({ userId });
+    if (!cart) {
+      cart = new Cart({ userId, items: [] });
     }
-  };
-  exports.updateCartItemQuantity = async (req, res) => {
-    try {
-      const { userId, flowerId, quantity } = req.body;
-      const cart = await Cart.findOneAndUpdate(
-        { userId, 'items.flowerId': flowerId },
-        { 'items.$.quantity': quantity },
-        { new: true }
-      );
-      res.status(200).json(cart);
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ message: 'Internal server error' });
+    const itemIndex = cart.items.findIndex((item) => item.flowerId.equals(flowerId));
+    if (itemIndex >= 0) {
+      cart.items[itemIndex].quantity += quantity;
+    } else {
+      cart.items.push({ flowerId, quantity });
     }
-  };
-  
-  exports.removeItemFromCart = async (req, res) => {
-    try {
-      const { userId, flowerId } = req.params;
-      const cart = await Cart.findOneAndUpdate(
-        { userId },
-        { $pull: { items: { flowerId } } },
-        { new: true }
-      );
-      res.status(200).json(cart);
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ message: 'Internal server error' });
-    }
-  };
+    const updatedCart = await cart.save();
+    res.status(201).json(updatedCart);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+};
+exports.updateCartItemQuantity = async (req, res) => {
+  try {
+    const { userId, flowerId, quantity } = req.body;
+    const cart = await Cart.findOneAndUpdate(
+      { userId, 'items.flowerId': flowerId },
+      { 'items.$.quantity': quantity },
+      { new: true }
+    );
+    res.status(200).json(cart);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+};
 
-  exports.incrementCartItemQuantity = async (req, res) => {
-    try {
-     
-     
-      const { userId, flowerId } = req.params;
-      console.log('userId:', userId); // Debugging
-      console.log('flowerId:', flowerId); // Debugging  
-      let cart = await Cart.findOne({ userId });
-      if (!cart) {
-        return res.status(404).json({ message: 'Cart not found' });
-      }
-      const item = cart.items.find((item) => item.flowerId.equals(flowerId));
-      if (!item) {
-        return res.status(404).json({ message: 'Item not found in cart' });
-      }
-      item.quantity += 1;
-      const updatedCart = await cart.save();
-      res.json(updatedCart);
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ message: 'Internal server error' });
+exports.removeItemFromCart = async (req, res) => {
+  try {
+    const { userId, flowerId } = req.params;
+    const cart = await Cart.findOneAndUpdate(
+      { userId },
+      { $pull: { items: { flowerId } } },
+      { new: true }
+    );
+    res.status(200).json(cart);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+};
+
+exports.incrementCartItemQuantity = async (req, res) => {
+  try {
+
+
+    const { userId, flowerId } = req.params;
+    console.log('userId:', userId); // Debugging
+    console.log('flowerId:', flowerId); // Debugging  
+    let cart = await Cart.findOne({ userId });
+    if (!cart) {
+      return res.status(404).json({ message: 'Cart not found' });
     }
-  };
-  
-  exports.decrementCartItemQuantity = async (req, res) => {
-    try {
-      const { userId, flowerId } = req.params;
-      let cart = await Cart.findOne({ userId });
-      if (!cart) {
-        return res.status(404).json({ message: 'Cart not found' });
-      }
-      const item = cart.items.find((item) => item.flowerId.equals(flowerId));
-      if (!item) {
-        return res.status(404).json({ message: 'Item not found in cart' });
-      }
-      if (item.quantity === 1) {
-        cart.items = cart.items.filter((item) => !item.flowerId.equals(flowerId));
-      } else {
-        item.quantity -= 1;
-      }
-      const updatedCart = await cart.save();
-      res.json(updatedCart);
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ message: 'Internal server error' });
+    const item = cart.items.find((item) => item.flowerId.equals(flowerId));
+    if (!item) {
+      return res.status(404).json({ message: 'Item not found in cart' });
     }
-  };
+    item.quantity += 1;
+    const updatedCart = await cart.save();
+    res.json(updatedCart);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+};
+
+exports.decrementCartItemQuantity = async (req, res) => {
+  try {
+    const { userId, flowerId } = req.params;
+    let cart = await Cart.findOne({ userId });
+    if (!cart) {
+      return res.status(404).json({ message: 'Cart not found' });
+    }
+    const item = cart.items.find((item) => item.flowerId.equals(flowerId));
+    if (!item) {
+      return res.status(404).json({ message: 'Item not found in cart' });
+    }
+    if (item.quantity === 1) {
+      cart.items = cart.items.filter((item) => !item.flowerId.equals(flowerId));
+    } else {
+      item.quantity -= 1;
+    }
+    const updatedCart = await cart.save();
+    res.json(updatedCart);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+};

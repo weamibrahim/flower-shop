@@ -5,6 +5,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 let root = ReactDom.createRoot(
     document.getElementById('root')
 )

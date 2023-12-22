@@ -8,18 +8,7 @@ function Home() {
                     <div className="banner-heading">
                         <h1>Find your favourite flower</h1>
                     </div>
-                    {/* <form className="form">
-            <input type="text" placeholder="Where would you like to go?" />
-            <datalist id="mylist">
-              <option>London</option>
-              <option>Canada</option>
-              <option>Monaco</option>
-              <option>France</option>
-              <option>Japan</option>
-              <option>Switzerland</option>
-              <option>Seoul</option>
-            </datalist>
-          </form> */}
+                  
                 </div>
             </section>
 
@@ -30,7 +19,7 @@ function Home() {
             <div className="container-fluid py-5" >
                 <div className="container pt-5 pb-3">
                     <div className="text-center mb-3 pb-3">
-                        {/* <h6 className="text-primary text-uppercase" style={{letterSpacing: "5px"}}></h6> */}
+                       
                         <h3>MY favourite flower </h3>
                     </div>
                     <div className="row">

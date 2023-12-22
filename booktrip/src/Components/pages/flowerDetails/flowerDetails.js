@@ -19,9 +19,9 @@ const FlowerDetail = () => {
   }, [])
   const handleAddToCart = async () => {
     const userId = JSON.parse(localStorage.getItem('userData'))._id;
-    // Replace with the actual user ID
-    const flowerId = flower._id; // Assuming you're using the flower's ID as the flower ID
-    const quantity = 1; // You can adjust the quantity as needed
+
+    const flowerId = flower._id;
+    const quantity = 1;
     console.log(userId, flowerId, quantity);
     try {
       const response = await fetch("https://flowershop-bw6z.onrender.com/api/cart/add-item", {
@@ -33,10 +33,10 @@ const FlowerDetail = () => {
       });
 
       if (response.ok) {
-        // Item added to cart successfully
+
         console.log("Item added to cart");
       } else {
-        // Handle error if needed
+
         console.error("Failed to add item to cart");
       }
     } catch (error) {
@@ -52,7 +52,7 @@ const FlowerDetail = () => {
         <div className="col-md-6 mb-4">
           <img src={'https://flowershop-bw6z.onrender.com/images/' + flower.image} style={{ maxWidth: "500px", maxHeight: "500px" }} alt="flower.name" className="img-fluid rounded-circle" />
         </div>
-        <div className="col-md-6">
+        <div className="col-md-6 text-center text-capitalize">
           {flower.des}
 
           <p className="text-center  my-3"> price :{flower.price}</p>

@@ -19,3 +19,6 @@ li{
 li :hover  {
     color:#ff58b9  !important;
 }
+.head{
+    border-top: 20px solid #f4b3d9;
+}

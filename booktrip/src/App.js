@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { useState } from "react";
 import Home from "./Components/pages/home/home";
@@ -13,7 +14,7 @@ import Cart from "./Components/pages/cart/cart";
 import UpdateProfile from "./Components/pages/updateProfile/update";
 import Checkout from "./Components/pages/checkout/checkout";
 
-
+import ContactUs from "./Components/pages/contactUs/contactus";
 
 import DashBoard from "./Components/DashBoard/dashboard";
 import AllFlower from "./Components/DashBoard/Flowers/all/allFlower";
@@ -68,6 +69,7 @@ function App() {
                     <Route path="/flower/:id" element={loggedIn ?<FlowerDetail />: <Navigate to="/login"/>} />
                     <Route path="/cart"element={loggedIn ? <Cart /> : <Navigate to="/login"/>}/>
                     <Route path="/checkout"element={<Checkout/>}/>
+                    <Route path="/contactus" element={<ContactUs />} />
                     <Route path="*" element={<Error />} />
                 </Routes>
                 <Footer/>

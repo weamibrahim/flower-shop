@@ -1,4 +1,14 @@
-.bgu {
+/* AddFlower.css */
+
+.flower-form {
+    box-shadow: 5px 5px 5px 5px #c8c8c8;
+    padding: 10px;
+    max-width: 500px; 
+    width: 100%; 
+    margin: 5px;
+}
+
+.bgform {
     background-image: url("https://img.freepik.com/free-photo/top-view-roses-flowers-with-copy-space_23-2148860042.jpg?size=626&ext=jpg&ga=GA1.1.1532466403.1676939380&semt=sph");
     background-size: cover;
     background-repeat: no-repeat;
@@ -6,4 +16,3 @@
    
     position: relative; /* Needed for overlay positioning */
   }
-  

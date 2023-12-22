@@ -1,7 +1,8 @@
 import "./signup.css";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink,useNavigate } from "react-router-dom";
 function Signup() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [user_name, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -40,12 +41,10 @@ function Signup() {
         localStorage.setItem('userData', JSON.stringify(data.user));
         //localStorage.setItem('accessToken', data.accessToken);
         
-        // Registration successful
-
-        // Redirect to the login page or another page
-        window.location.href = '/login';
+      
+      navigate('/login');
       } else {
-        // Registration failed
+      
         const message = data.message;
         alert(`Registration failed: ${message}`);
       }

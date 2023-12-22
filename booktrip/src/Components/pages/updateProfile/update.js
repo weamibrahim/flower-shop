@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./update.css"
+import { useNavigate } from "react-router-dom";
 function UpdateProfile() {
 
+    const navigate = useNavigate();
     const userData = JSON.parse(localStorage.getItem('userData'));
 
     const [formData, setUserUpdateData] = useState({
@@ -43,7 +45,7 @@ function UpdateProfile() {
                 localStorage.setItem('userData', JSON.stringify(updatedUserData));
 
                 // console.log("success");
-                window.location.href = "/profile"// Redirect to the profile page after successful update
+                navigate("/profile")
             } else {
                 console.error('Failed to update profile');
             }

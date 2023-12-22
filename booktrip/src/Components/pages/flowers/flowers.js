@@ -13,15 +13,16 @@ class Flowers extends Component {
   }
   componentDidMount() {
     fetch("https://flowershop-bw6z.onrender.com/api/Flower/Flowers")
-      .then((response) => { 
-       // console.log("before .json",response)
-        return response.json(); })
+      .then((response) => {
+        // console.log("before .json",response)
+        return response.json();
+      })
       .then((data) => {
-       // console.log("after response",data);
+        // console.log("after response",data);
         this.setState({ flowers: data })
 
       })
-      
+
 
   }
   handleSearchInputChange = (event) => {
@@ -91,7 +92,7 @@ class Flowers extends Component {
         <div className="row row-cols-1  g-0 my-5"  >
           <div style={{ display: "flex", justifyContent: "center" }}>
             <BsSearch className='icons mx-2 ' />
-            <input style={{maxWidth: "400px", height: "50px", border: "4px solid #ff58b9", borderRadius: "10px" }}
+            <input style={{ maxWidth: "400px", height: "50px", border: "4px solid #ff58b9", borderRadius: "10px" }}
               type="text"
               placeholder="Search by name or price"
               value={this.state.searchQuery}
