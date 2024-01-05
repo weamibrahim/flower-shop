@@ -72,7 +72,7 @@ function App() {
                     <Route path="/contactus" element={<ContactUs />} />
                     <Route path="*" element={<Error />} />
                 </Routes>
-                <NavLink    className="whatsapp_float" to="https://wa.me/+201008864924"><i className="fa-brands fa-whatsapp fs-4 my-2"></i></NavLink>
+                <NavLink    className="whatsapp_float" to="https://wa.me/+201008864924"><i className="fa-brands fa-whatsapp  fs-4 my-2"></i></NavLink>
 
                 <Footer/>
             </BrowserRouter>
