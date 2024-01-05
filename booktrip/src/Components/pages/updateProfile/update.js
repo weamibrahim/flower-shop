@@ -12,7 +12,7 @@ function UpdateProfile() {
         mobile: userData.mobile,
         gender: userData.gender,
         address: userData.address,
-        role: userData.role
+        // role: userData.role
 
     });
 
@@ -29,15 +29,18 @@ function UpdateProfile() {
         e.preventDefault();
         try {
             // console.log(formData);
-            const response = await fetch(`https://flowershop-bw6z.onrender.com/api/users/update/${userData._id}`, {
-                method: 'PUT',
+          
+
+            const response = await fetch(
+              `https://flowershop-bw6z.onrender.com/api/users/update/${userData._id}`,
+              {
+                method: "PUT",
                 headers: {
-                    'Content-Type': 'application/json',
-                   
+                  "Content-Type": "application/json",
                 },
                 body: JSON.stringify(formData),
-
-            });
+              }
+            );
 
             if (response.ok) {
                 // Update localStorage with the new data
@@ -91,13 +94,13 @@ function UpdateProfile() {
                         </select>
 
                     </div>
-                    <div className="inputBox">
+                    {/* <div className="inputBox">
                         <select value={formData.role} name="role" onChange={handleInputChange} required>
                             <option value="">Select Role</option>
                             <option value="user">User</option>
                             <option value="admin">Admin</option>
                         </select>
-                    </div>
+                    </div> */}
                     <div className="inputBox">
 
                         <input type="text" value={formData.mobile} name="mobile" onChange={handleInputChange} required />

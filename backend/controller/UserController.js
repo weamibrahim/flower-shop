@@ -4,7 +4,12 @@ const userController = {};
 userController.updateUserById = async (req, res, next) => {
   try {
       const { id } = req.params;
-      const { user_name, email, password, userImage, gender, role, mobile, address } = req.body;
+      const { user_name, email, password, 
+        userImage,
+         gender,
+        //  role,
+          mobile,
+           address } = req.body;
       console.log(req.body);
 
       const user = await User.findById(id);
@@ -16,7 +21,7 @@ userController.updateUserById = async (req, res, next) => {
       user.email = email ?? user.email;
       user.password = password ?? user.password;
       user.gender = gender ?? user.gender;
-      user.role = role ?? user.role;
+      // user.role = role ?? user.role;
       user.mobile = mobile ?? user.mobile;
       user.address = address ?? user.address;
 

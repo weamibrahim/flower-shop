@@ -83,28 +83,28 @@ authController.login = async (req, res, next) => {
 
 
 
-authController.logout = async (req, res, next) => {
-    try {
-      // Get the authorization token from the request header
-      const authHeader = req.headers.authorization;
-      if (!authHeader || !authHeader.startsWith('Bearer ')) {
-        return res.status(401).json({ message: 'Authorization token is missing or invalid' });
-      }
+// authController.logout = async (req, res, next) => {
+//     try {
+//       // Get the authorization token from the request header
+//       const authHeader = req.headers.authorization;
+//       if (!authHeader || !authHeader.startsWith('Bearer ')) {
+//         return res.status(401).json({ message: 'Authorization token is missing or invalid' });
+//       }
   
-      // Extract the token from the header
-      const token = authHeader.split(' ')[1];
+//       // Extract the token from the header
+//       const token = authHeader.split(' ')[1];
   
-      // Verify the token and get the user ID
-      const decodedToken = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
-      const userId = decodedToken.userId;
+//       // Verify the token and get the user ID
+//       const decodedToken = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
+//       const userId = decodedToken.userId;
   
-      // TODO: Implement logout logic here, such as invalidating the token or deleting it from the client-side
+//       // TODO: Implement logout logic here, such as invalidating the token or deleting it from the client-side
   
-      res.status(200).json({ message: 'Logout successful' });
-    } catch (err) {
-      next(err);
-    }
-  };
+//       res.status(200).json({ message: 'Logout successful' });
+//     } catch (err) {
+//       next(err);
+//     }
+//   };
 
   // Reset user password
   

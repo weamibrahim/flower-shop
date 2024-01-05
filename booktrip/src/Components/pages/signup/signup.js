@@ -7,7 +7,7 @@ function Signup() {
   const [user_name, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [gender, setGender] = useState('');
-  const [role, setRole] = useState('');
+  // const [role, setRole] = useState('');
   const [mobile, setMobile] = useState('');
   const [address, setAddress] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -26,12 +26,13 @@ function Signup() {
     }
 
     try {
-      const response = await fetch('https://flowershop-bw6z.onrender.com/api/users/register', {
-        method: 'POST',
+      const response = await fetch('https://flowershop-bw6z.onrender.com/api/users/register',
+       { method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ user_name, email, password, gender, role, mobile, address }),
+        // body: JSON.stringify({ user_name, email, password, gender, role, mobile, address }),
+        body: JSON.stringify({ user_name, email, password, gender, mobile, address }),
 
       });
 
@@ -81,13 +82,13 @@ function Signup() {
             </select>
           </div>
 
-          <div className="inputBox">
+          {/* <div className="inputBox">
             <select value={role} onChange={(e) => setRole(e.target.value)} required>
               <option value="">Select Role</option>
               <option value="user">User</option>
               <option value="admin">Admin</option>
             </select>
-          </div>
+          </div> */}
 
           <div className="inputBox">
             <input type="text" value={mobile} onChange={(e) => setMobile(e.target.value)} required />
