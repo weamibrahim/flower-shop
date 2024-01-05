@@ -1,5 +1,5 @@
-
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import "./App.css";
+import { BrowserRouter, Route, Routes, Navigate, NavLink } from "react-router-dom";
 import { useState } from "react";
 import Home from "./Components/pages/home/home";
 import About from "./Components/pages/about/about";
@@ -72,6 +72,8 @@ function App() {
                     <Route path="/contactus" element={<ContactUs />} />
                     <Route path="*" element={<Error />} />
                 </Routes>
+                <NavLink    className="whatsapp_float" to="https://wa.me/+201008864924"><i className="fa-brands fa-whatsapp fs-4 my-2"></i></NavLink>
+
                 <Footer/>
             </BrowserRouter>
         </div>
