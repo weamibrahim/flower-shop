@@ -10,7 +10,8 @@ function UpdateFlower() {
         name: '',
         des: '',
         image: '',
-        price: ''
+        price: '',
+        category: '',
     });
 
     useEffect(() => {
@@ -54,7 +55,8 @@ function UpdateFlower() {
         formData.append('des', flowerData.des);
         formData.append('price', flowerData.price);
         formData.append('image', flowerData.image);
-
+        formData.append('category', flowerData.category);
+console.log(flowerData)
         // Make the API call to update the flower
         fetch(`https://flowershop-bw6z.onrender.com/api/flower/update/${id}`, {
             method: 'PUT',
@@ -103,6 +105,15 @@ function UpdateFlower() {
                                 type="text"
                                 name="name"
                                 value={flowerData.name || ''}
+                                onChange={handleInputChange}
+                            />
+                            <br />
+                            <label>category </label>
+                            <input
+                                className='form-control mb-3'
+                                type="text"
+                                name="category"
+                                value={flowerData.category|| ''}
                                 onChange={handleInputChange}
                             />
                             <br />

@@ -22,15 +22,15 @@ const upload = multer({ storage: storage });
 exports.createFlower = [
   upload.single('image'), // 'image' should match the name attribute in your form input
   function(req, res) {
-    const { name, des, price } = req.body;
+    const { name, des, price ,category} = req.body;
     console.log(req.body)
     const image = req.file; // This will contain the uploaded image data
 console.log(image)
-    if (!(name && des && price && image)) {
+    if (!(name && des && price && image && category)) {
       return res.status(400).json({ message: "Please provide all required fields" });
     }
 
-    const newFlower = new Flower({ name, des, image: image.filename, price });
+    const newFlower = new Flower({ name, des, image: image.filename, price ,category});
 
     try {
       const result = newFlower.save();
@@ -122,10 +122,10 @@ exports.getFlowerById = function(req, res) {
   upload.single('image'),
  async (req, res) => {
     try {
-        const { name, des, image,  price } = req.body;
+        const { name, des, image,  price,category } = req.body;
         const updatedFlower = await Flower.findByIdAndUpdate(
           req.params.id,
-          { name, des, image, price }, // Use updatedFlower instead of Flower
+          { name, des, image, price ,category}, // Use updatedFlower instead of Flower
           { new: true }
         );
         if (req.file) {
@@ -137,7 +137,7 @@ exports.getFlowerById = function(req, res) {
         if (!updatedFlower) {
           return res.status(404).json({ error: 'Flower item not found' });
         }
-        res.json(updatedFlower);
+        res.json(updatedFlower, { message: 'Flower item updated successfully' });
       } catch (err) {
         console.error(err.message);
         res.status(500).send('Server Error');

@@ -7,7 +7,11 @@ const TourSchema = new mongoose.Schema({
     , required: [false,"Title is required "] 
     
     },
-
+    category: { 
+      type: String
+      
+      
+      },
 
   des: { 
     type: String, 

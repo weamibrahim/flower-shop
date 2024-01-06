@@ -10,7 +10,8 @@ function AddFlower() {
         name: '',
         des: '',
         image: '',
-        price: ''
+        price: '',
+        category:'',
     });
     //console.log(flowerData)
     const handleInputChange = (event) => {
@@ -29,17 +30,21 @@ function AddFlower() {
             ...prevData,
             image: imageFile,
         }));
-        console.log(imageFile);
+       // console.log(imageFile);
     };
 
     const handleSubmit = (event) => {
         const formData = new FormData();
         formData.append('name', flowerData.name);
+        formData.append('category', flowerData.category);
         formData.append('des', flowerData.des);
+       
         formData.append('price', flowerData.price);
         formData.append('image', flowerData.image);
+       
         event.preventDefault();
 
+        console.log(flowerData)
         // Make the API call to create a new flower
         fetch(`https://flowershop-bw6z.onrender.com/api/flower/create`, {
             method: 'POST',
@@ -49,7 +54,7 @@ function AddFlower() {
             .then((response) => response.json())
             .then((data) => {
 
-                // console.log('flower created:', data);
+                 console.log('flower created:', data);
 
                 navigate('/dashboard/allflower');
             })
@@ -94,6 +99,19 @@ function AddFlower() {
                                 onChange={handleInputChange}
                             />
                             <br />
+                      
+                            <label>category: </label>
+                            <input
+                                className='form-control mb-3'
+                                type="text"
+                                name="category"
+                                value={flowerData.category}
+                                onChange={handleInputChange}
+                            />
+                            <br />
+                      
+
+
                             <label>description</label>
                             <input
                                 className='form-control mb-3'

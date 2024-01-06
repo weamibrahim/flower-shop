@@ -68,6 +68,7 @@ class AllFlower extends Component {
                     <th scope="col">name</th>
                     <th scope="col">image</th>
                     <th scope="col">price </th>
+                    <th scope="col">category </th>
                     <th>action</th>
                   </tr>
                 </thead>
@@ -83,11 +84,13 @@ class AllFlower extends Component {
                         <td>{flower.name}</td>
                         <td><img style={{ width: "50px", height: "50px" }} src={'https://flowershop-bw6z.onrender.com/images/' + flower.image} /></td>
                         <td>{flower.price}</td>
+                        <td>{ flower.category}</td>
                         <td><button className="btn btn-danger mx-1 my-2" onClick={() => this.handleDelete(flower._id)}><MdDelete className='fs-2' /></button>
                           <button className="btn btn-success mx-1"><NavLink to={`updateflower/${flower._id}`} className="text-decoration-none text-white"><LiaEdit className='fs-2' /></NavLink>    </button>
 
 
                         </td>
+                       
                       </tr>
 
                     </tbody>

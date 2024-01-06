@@ -38,13 +38,16 @@ authController.register = async (req, res, next) => {
       address,
       mobile,
       password: hashedPassword,
-      gender
+      gender, 
+      createdAt: Date.now(),
    
       
     });
 
-    const savedUser = await newUser.save();
+    console.log('New User:', newUser);
 
+    const savedUser = await newUser.save();
+    console.log('Saved User:', savedUser);
     //const accessToken = jwt.sign({ userId: savedUser._id },  accessTokenSecret);
 
     res.status(201).json({ message: 'User created successfully', user: savedUser});

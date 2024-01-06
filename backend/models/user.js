@@ -50,7 +50,13 @@ const userSchema = new Schema({
     required: false
   },
  
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+ 
 });
+
 
 const User = mongoose.model('users', userSchema);
 
