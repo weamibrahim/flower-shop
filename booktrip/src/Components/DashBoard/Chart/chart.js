@@ -46,51 +46,98 @@ function ChartData (){
                     },
                 ],
             },
+            options: {
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    
+                    ticks: {
+    
+                      color: 'black', // Text color
+                      font: {
+                        weight: 'bold' // Font weight
+                      }
+                    }
+                  }
+                  ,x: {
+                    beginAtZero: true,
+                    ticks: {
+                      color: 'black', // Text color
+                      font: {
+                        weight: 'bold' // Font weight
+                      }
+                      
+                    }
+                  }
+                }
+              }
         });
     };
 
     const createUserChart = (usersData) => {
-        const roleCounts = {
-            admin: 0,
-            user: 0,
-        };
-    
-        usersData.forEach((user) => {
-            const role = user.role.toLowerCase(); // Convert to lowercase for case-insensitive comparison
-            if (roleCounts.hasOwnProperty(role)) {
-                roleCounts[role]++;
-            }
-        });
-    
-        const roles = Object.keys(roleCounts);
-        const counts = Object.values(roleCounts);
-    
-        console.log('Roles:', roles);
-        console.log('Counts:', counts);
-    
+        // Transform data to get counts for each month
+        const userCounts = usersData.reduce((acc, user) => {
+          const month = new Date(user.createdAt).getMonth(); // Extract month from createdAt
+          acc[month] = (acc[month] || 0) + 1;
+          return acc;
+        }, []);
+      
+        const months = [
+          'January', 'February', 'March', 'April',
+          'May', 'June', 'July', 'August',
+          'September', 'October', 'November', 'December'
+        ];
+      
         let ctx = document.getElementById('userChart').getContext('2d');
-    
+      
         if (window.myUserChart) {
-            window.myUserChart.destroy();
+          window.myUserChart.destroy();
         }
-    
+      
         new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-                labels: roles,
-                datasets: [
-                    {
-                        label: 'Role Count',
-                        data: counts,
-                        backgroundColor: ['rgba(255, 99, 132, 0.8)', 'rgba(54, 162, 235, 0.8)'],
-                        borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)'],
-                        borderWidth: 1,
-                    },
-                ],
-            },
+          type: 'bar',
+          data: {
+            labels: months,
+            datasets: [
+              {
+                label: 'User Count',
+                data: userCounts,
+                
+                backgroundColor: 'rgba(0, 0, 255, 0.7)',
+                borderColor: 'rgba(0, 0, 255, 0.6)',
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
+                
+                ticks: {
+
+                  color: 'black', // Text color
+                  font: {
+                    weight: 'bold' // Font weight
+                  }
+                }
+              }
+              ,x: {
+                beginAtZero: true,
+                ticks: {
+                  color: 'black', // Text color
+                  font: {
+                    weight: 'bold' // Font weight
+                  }
+
+                }
+              }
+            }
+          }
         });
-    };
-    
+      };
+      
+      
     
     return (
         <div className='d-flex justify-content-around'>
