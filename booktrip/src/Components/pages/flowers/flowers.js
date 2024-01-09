@@ -110,7 +110,7 @@ class Flowers extends Component {
 
               <div className="col-md-4  d-flex justify-content-around" key={flower.id}  >
                 <div className="card m-4  " style={{ maxWidth: "300px" }}  >
-                  <img src={'https://flowershop-bw6z.onrender.com/images/' + flower.image} style={{ maxHeight: "150px", maxWidth: "300px" }} className="card-img-top " alt="..." />
+                  <img src={'http://localhost:7000/images/' + flower.image} style={{ maxHeight: "150px", maxWidth: "300px" }} className="card-img-top " alt="..." />
                   <div className="card-body">
                     <h5 className="text-center card-title">{flower.name}</h5>
                     <h6 className="text-center card-title">{flower.price}$</h6>

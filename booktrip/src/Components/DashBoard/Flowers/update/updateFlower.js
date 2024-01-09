@@ -57,17 +57,22 @@ function UpdateFlower() {
         formData.append('image', flowerData.image);
         formData.append('category', flowerData.category);
 console.log(flowerData)
+const accessToken = localStorage.getItem('accessToken');
+
+const headers = new Headers();
+headers.append('Authorization', `Bearer ${accessToken}`);
+console.log( "headers",headers)
+
         // Make the API call to update the flower
         fetch(`https://flowershop-bw6z.onrender.com/api/flower/update/${id}`, {
             method: 'PUT',
-
+            headers: headers,
             body: formData
         })
             .then((response) => response.json())
             .then((data) => {
 
                 console.log('flower updated:', data);
-
                 navigate('/dashboard/allflower');
             })
             .catch((error) => {

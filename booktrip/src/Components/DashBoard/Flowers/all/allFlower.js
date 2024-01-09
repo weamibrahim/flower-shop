@@ -29,9 +29,13 @@ class AllFlower extends Component {
   handleDelete = (id) => {
     console.log(id);
     // Make a DELETE request to the server to delete the flower
-
+    const accessToken = localStorage.getItem('accessToken');
     fetch(`https://flowershop-bw6z.onrender.com/api/flower/delete/${id}`, {
       method: "DELETE",
+      headers: {
+        
+        'Authorization': `Bearer ${accessToken}`,
+      },
     })
       .then((response) => response.json())
       .then((data) => {
@@ -47,7 +51,7 @@ class AllFlower extends Component {
 
         <div className="d-flex justify-content-center " >
           <Sidebar />
-          <div className="container bgform " >
+          <div className="container-fluid bgform " >
 
             <button className="btn btn-info my-3"><NavLink to="addflower" className="text-decoration-none text-white"  >Add flower</NavLink> </button>
 

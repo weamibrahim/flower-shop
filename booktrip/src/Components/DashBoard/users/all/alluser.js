@@ -13,12 +13,21 @@ class Alluser extends Component {
       users: [],
       searchQuery: ''
     }
+
   }
   handleSearchInputChange = (event) => {
     this.setState({ searchQuery: event.target.value });
   };
   componentDidMount() {
-    fetch("https://flowershop-bw6z.onrender.com/api/users/alluser")
+    let accessToken = localStorage.getItem('accessToken');
+
+    fetch("https://flowershop-bw6z.onrender.com/api/users/alluser", {
+      method: "GET",
+      headers: {
+                
+        'Authorization': `Bearer ${accessToken}`,
+      },
+    })
       .then((response) => { return response.json(); })
       .then((data) => {
         console.log(data);
@@ -29,9 +38,14 @@ class Alluser extends Component {
   }
   handleDelete = (id) => {
     console.log(id);
+    let accessToken = localStorage.getItem('accessToken');
     // Make a DELETE request to the server to delete the user
     fetch(`https://flowershop-bw6z.onrender.com/api/users/delete/${id}`, {
       method: "DELETE",
+      headers: {
+                
+        'Authorization': `Bearer ${accessToken}`,
+      },
     })
       .then((response) => response.json())
       .then((data) => {
@@ -67,7 +81,8 @@ class Alluser extends Component {
                     <th>action</th>
                   </tr>
                 </thead>
-                {this.state.users.filter(user =>
+                {this.state.users
+                .filter(user =>
                   (user.name && user.name.toLowerCase().includes(this.state.searchQuery.toLowerCase())) ||
                   (user.email && user.email.toString().includes(this.state.searchQuery)))
                   .map((user) => (

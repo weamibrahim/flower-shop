@@ -29,7 +29,7 @@ function UpdateProfile() {
         e.preventDefault();
         try {
             // console.log(formData);
-          
+            let accessToken = localStorage.getItem('accessToken');
 
             const response = await fetch(
               `https://flowershop-bw6z.onrender.com/api/users/update/${userData._id}`,
@@ -37,6 +37,7 @@ function UpdateProfile() {
                 method: "PUT",
                 headers: {
                   "Content-Type": "application/json",
+                  'Authorization': `Bearer ${accessToken}`,
                 },
                 body: JSON.stringify(formData),
               }

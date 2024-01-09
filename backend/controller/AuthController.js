@@ -1,7 +1,7 @@
 const User = require('../models/user');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const accessTokenSecret = process.env.ACCESS_TOKEN_SECRET;
+
 const crypto = require('crypto');
 const nodemailer = require('nodemailer');
 

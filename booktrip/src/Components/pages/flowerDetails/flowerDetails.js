@@ -17,9 +17,10 @@ const FlowerDetail = () => {
         setflower(data);
       })
   }, [])
-  const handleAddToCart = async () => {
+  const handleAddToCart = async (e) => {
+    e.preventDefault();
     const userId = JSON.parse(localStorage.getItem('userData'))._id;
-
+    const accessToken = localStorage.getItem('accessToken');
     const flowerId = flower._id;
     const quantity = 1;
     console.log(userId, flowerId, quantity);
@@ -28,6 +29,10 @@ const FlowerDetail = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+        
+                
+            'Authorization': `Bearer ${accessToken}`,
+        
         },
         body: JSON.stringify({ userId, flowerId, quantity }),
       });
@@ -50,7 +55,7 @@ const FlowerDetail = () => {
     <div className="container my-5 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
       <div className="row">
         <div className="col-md-6 mb-4">
-          <img src={'https://flowershop-bw6z.onrender.com/images/' + flower.image} style={{ maxWidth: "500px", maxHeight: "500px" }} alt="flower.name" className="img-fluid rounded-circle" />
+          <img src={'http://localhost:7000/images/' + flower.image} style={{ maxWidth: "500px", maxHeight: "500px" }} alt="flower.name" className="img-fluid rounded-circle" />
         </div>
         <div className="col-md-6 text-center text-capitalize">
           {flower.des}

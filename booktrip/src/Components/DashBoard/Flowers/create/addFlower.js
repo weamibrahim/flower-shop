@@ -34,34 +34,47 @@ function AddFlower() {
     };
 
     const handleSubmit = (event) => {
+        event.preventDefault();
+    
+        const accessToken = localStorage.getItem('accessToken');
+        console.log('Access Token:', accessToken);
+    
+        if (!accessToken) {
+            console.error('Access Token is missing.');
+            return;
+        }
+    
+        const headers = new Headers();
+        headers.append('Authorization', `Bearer ${accessToken}`);
+        console.log( "headers",headers)
+    
         const formData = new FormData();
         formData.append('name', flowerData.name);
         formData.append('category', flowerData.category);
         formData.append('des', flowerData.des);
-       
         formData.append('price', flowerData.price);
         formData.append('image', flowerData.image);
+    
        
-        event.preventDefault();
-
-        console.log(flowerData)
-        // Make the API call to create a new flower
         fetch(`https://flowershop-bw6z.onrender.com/api/flower/create`, {
             method: 'POST',
-
+            headers: headers,
             body: formData
         })
-            .then((response) => response.json())
-            .then((data) => {
-
-                 console.log('flower created:', data);
-
+        .then((response) => {
+            if (response.ok) {
+                console.log('Flower created successfully');
                 navigate('/dashboard/allflower');
-            })
-            .catch((error) => {
-                console.error('Error creating flower:', error);
-            });
+            } else {
+                console.error('Error creating flower:', response.statusText);
+            }
+        })
+        .catch((error) => {
+            console.error('Error creating flower:', error);
+        });
     };
+    
+    
 
     return (
 

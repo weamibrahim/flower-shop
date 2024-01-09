@@ -45,34 +45,34 @@ userController.updateUserById = async (req, res, next) => {
   // get all users for dashboard
 
   
-  userController.getUserById = async (req, res, next) => {
-    try {
-      const { id } = req.params;
-      const user = await User.findById(id);
-      if (!user) {
-        return res.status(404).json({ message: 'User not found' });
-      }
-      res.status(200).json(user);
-    } catch (err) {
-      next(err);
-    }
-  };
+  // userController.getUserById = async (req, res, next) => {
+  //   try {
+  //     const { id } = req.params;
+  //     const user = await User.findById(id);
+  //     if (!user) {
+  //       return res.status(404).json({ message: 'User not found' });
+  //     }
+  //     res.status(200).json(user);
+  //   } catch (err) {
+  //     next(err);
+  //   }
+  // };
   
   
   
-  //Search
-  userController.getUserByName = async (req, res, next) => {
-    const name = req.params.name;
-     console.log(name);
+  // //Search
+  // userController.getUserByName = async (req, res, next) => {
+  //   const name = req.params.name;
+  //    console.log(name);
   
-    User.find({ user_name: name })
-      .then(users => {
-        res.json(users);
-      })
-      .catch(err => {
-        return res.status(500).json({ message: err.message });
-      });
-  };
+  //   User.find({ user_name: name })
+  //     .then(users => {
+  //       res.json(users);
+  //     })
+  //     .catch(err => {
+  //       return res.status(500).json({ message: err.message });
+  //     });
+  // };
   
   
   userController.deleteUserById = async (req, res, next) => {

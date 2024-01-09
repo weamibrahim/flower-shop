@@ -25,7 +25,7 @@ exports.createFlower = [
     const { name, des, price ,category} = req.body;
     console.log(req.body)
     const image = req.file; // This will contain the uploaded image data
-console.log(image)
+//console.log(image)
     if (!(name && des && price && image && category)) {
       return res.status(400).json({ message: "Please provide all required fields" });
     }
@@ -137,7 +137,7 @@ exports.getFlowerById = function(req, res) {
         if (!updatedFlower) {
           return res.status(404).json({ error: 'Flower item not found' });
         }
-        res.json(updatedFlower, { message: 'Flower item updated successfully' });
+        res.json({updatedFlower, message: 'Flower item updated successfully' });
       } catch (err) {
         console.error(err.message);
         res.status(500).send('Server Error');
