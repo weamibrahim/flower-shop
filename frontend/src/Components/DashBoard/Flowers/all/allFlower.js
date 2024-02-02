@@ -86,7 +86,7 @@ class AllFlower extends Component {
                       <tr key={flower.id}>
 
                         <td>{flower.name}</td>
-                        <td><img style={{ width: "50px", height: "50px" }} src={'http://localhost:7000/images/' + flower.image} /></td>
+                        <td><img style={{ width: "50px", height: "50px" }} src={'https://flowershop-bw6z.onrender.com/images/' + flower.image} /></td>
                         <td>{flower.price}</td>
                         <td>{ flower.category}</td>
                         <td><button className="btn btn-danger mx-1 my-2" onClick={() => this.handleDelete(flower._id)}><MdDelete className='fs-2' /></button>

@@ -25,16 +25,19 @@ exports.createFlower = [
     const { name, des, price ,category} = req.body;
     console.log(req.body)
     const image = req.file; // This will contain the uploaded image data
-//console.log(image)
+console.log(image)
     if (!(name && des && price && image && category)) {
       return res.status(400).json({ message: "Please provide all required fields" });
     }
+  
+    
 
     const newFlower = new Flower({ name, des, image: image.filename, price ,category});
 
+    console.log(newFlower);
     try {
       const result = newFlower.save();
-      res.status(200).json({ message: "Flower created successfully", newFlower: result });
+      res.status(200).json({ message: "Flower created successfully", newFlower});
     } catch (error) {
       res.status(500).json({ message: error.message });
     }

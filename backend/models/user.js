@@ -30,24 +30,24 @@ const userSchema = new Schema({
   },
   gender: {
     type: String,
-    required: false,
+    required: true,
     enum: ['male', 'female']
   },
   role: {
     type: String,
-    required: false,
+    required: true,
     enum: ['user', 'admin'],
     default: 'user'
   },
   mobile: {
     type: String,
-    required: false,
+    required: true,
     minlength: 11,
     maxlength: 11
   },
   address: {
     type: String,
-    required: false
+    required: true
   },
  
   createdAt: {

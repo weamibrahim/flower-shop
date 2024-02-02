@@ -4,7 +4,7 @@ const TourSchema = new mongoose.Schema({
 
   name: { 
     type: String
-    , required: [false,"Title is required "] 
+    , required: false
     
     },
     category: { 
@@ -15,7 +15,7 @@ const TourSchema = new mongoose.Schema({
 
   des: { 
     type: String, 
-    required: [false, "summary is required"]
+    required: false
 
      },
 
@@ -26,7 +26,7 @@ const TourSchema = new mongoose.Schema({
  
   price : { 
     type: Number,
-     required: [false,"price is required "] },
+     required: false },
 
 });
 

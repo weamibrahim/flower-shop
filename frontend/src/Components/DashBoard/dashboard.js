@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import Sidebar from "../DashBoard/sidebar/sidebar";
+import Sidebar from "./sidebar/sidebar";
 import "./dashboard.css";
 import ChartData  from "./Chart/chart";
 
