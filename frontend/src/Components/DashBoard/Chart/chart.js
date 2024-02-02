@@ -13,7 +13,12 @@ function ChartData (){
             });
 
         // Fetch data for users
-        fetch("https://flowershop-bw6z.onrender.com/api/users/alluser")  // Replace with your user API endpoint
+        fetch("https://flowershop-bw6z.onrender.com/api/users/alluser",{
+            method: "GET",
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
+            }
+        })  // Replace with your user API endpoint
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
