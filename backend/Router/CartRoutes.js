@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const cartController = require('../controller/CartController');
-const { verifyToken } = require("../middleware/middleware"); 
+const { verifyToken } = require("../middleware/authToken"); 
 router.post('/add-item',verifyToken, cartController.addItemToCart);
 router.put('/update-item',verifyToken, cartController.updateCartItemQuantity);
 router.put('/remove-item/:userId/:flowerId',verifyToken, cartController.removeItemFromCart);

@@ -34,7 +34,7 @@ console.log(image)
 
     const newFlower = new Flower({ name, des, image: image.filename, price ,category});
 
-    console.log(newFlower);
+    console.log("newFlower",newFlower);
     try {
       const result = newFlower.save();
       res.status(200).json({ message: "Flower created successfully", newFlower});

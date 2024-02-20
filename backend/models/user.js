@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const dotenv = require("dotenv").config();
+
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({

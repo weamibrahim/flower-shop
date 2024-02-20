@@ -22,9 +22,7 @@ const verifyToken = (req, res, next) => {
       
     }
     console.log('Decoded Token:', decodedToken);
-    if (decodedToken.role !== 'admin') {
-      return res.status(403).json({ message: 'Permission denied. Admin access required.' });
-    }
+   
 
     req.user = decodedToken;
     next();
