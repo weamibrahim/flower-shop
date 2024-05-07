@@ -1,0 +1,38 @@
+/* Default styles */
+.carousel-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.658);
+    padding: 20px;
+    border-radius: 5px;
+   
+  }
+  .icons {
+    font-size: 30px;
+    color: rgb(120, 246, 244);
+  }
+  .carousel-overlay h2 {
+    margin: 0; /* Remove default margin */
+  }
+  /* Media queries */
+  @media (max-width: 768px) {
+    /* Adjust card width and spacing for smaller screens */
+    .col-md-4 {
+      flex: 0 0 100%; /* Make cards span the full width */
+      margin: 1rem 0;
+    }
+    
+    /* Adjust carousel overlay for smaller screens */
+    .carousel-overlay {
+      font-size: 14px;
+      padding: 10px;
+      margin-top: 10px;
+    }
+    
+    /* Adjust input width for smaller screens */
+    input[type="text"] {
+      width: 100%;
+    }
+  }

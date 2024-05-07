@@ -4,8 +4,12 @@ import "./header.css";
 import { GiVineFlower } from 'react-icons/gi';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { FaShoppingCart } from 'react-icons/fa'
-
+import { FaHome } from "react-icons/fa";
+import { IoIosLogOut ,IoMdFlower} from "react-icons/io";
 import { useState } from 'react';
+import { MdDashboard } from "react-icons/md";
+import { IoPersonSharp  } from "react-icons/io5";
+import { MdOutlineContactPhone } from "react-icons/md";
 function Header() {
   const [loggedIn, setLoggedIn] = useState(localStorage.getItem('accessToken') !== null);
 
@@ -34,16 +38,16 @@ function Header() {
               {userRole !== 'admin' && (
                 <>
                   <li>
-                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/home">Home</NavLink>
+                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/home"><FaHome  className='fs-6 m-1'/>Home</NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/about">About </NavLink>
+                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/about"><IoPersonSharp  className='fs-6 m-1'/>About </NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/contactus">ContactUs </NavLink>
+                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/contactus"><MdOutlineContactPhone  className='fs-6 m-1'/> ContactUs </NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/flowers">Flower </NavLink>
+                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/flowers"><IoMdFlower  className='fs-6 m-1'/>Flower </NavLink>
                   </li>
                   <li className="nav-item">
                     <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/profile"><BsFillPersonFill className="icone" /></NavLink>
@@ -53,19 +57,19 @@ function Header() {
               {userRole === 'admin' && (
                 <>
                   <li className="nav-item">
-                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/dashboard">Dashboard</NavLink>
+                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/dashboard"><MdDashboard className='fs-6 m-1' />Dashboard</NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/home">Home</NavLink>
+                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/home"> <FaHome  className='fs-6 m-1'/>Home</NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/about">About </NavLink>
+                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/about"> <IoPersonSharp   className='fs-6 m-1'/>About </NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/contactus">ContactUs </NavLink>
+                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/contactus"><MdOutlineContactPhone className='fs-6 m-1' />  ContactUs </NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/flowers">Flower </NavLink>
+                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/flowers"><IoMdFlower  className='fs-6 m-1'/> Flower </NavLink>
                   </li>
                   <li className="nav-item">
                     <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/profile"><BsFillPersonFill className="icone" /></NavLink>
@@ -74,7 +78,7 @@ function Header() {
               )}
               {loggedIn ? (
                 <li className="nav-item">
-                  <NavLink style={{ color: 'black', textDecoration: 'none' }} onClick={handleLogout} to="/login">Logout</NavLink>
+                  <NavLink style={{ color: 'black', textDecoration: 'none' }} onClick={handleLogout} to="/login"><IoIosLogOut /></NavLink>
                 </li>
               ) : (
                 <>

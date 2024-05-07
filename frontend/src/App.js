@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes, Navigate, NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 import Home from "./Components/pages/home/home";
 import About from "./Components/pages/about/about";
 import Header from './Components/Header/header';
@@ -21,6 +21,7 @@ import AllFlower from "./Components/DashBoard/Flowers/all/allFlower";
 import Alluser from "./Components/DashBoard/users/all/alluser";
 import AddFlower from "./Components/DashBoard/Flowers/create/addFlower";
 import UpdateFlower from "./Components/DashBoard/Flowers/update/updateFlower";
+import Loading from "./Components/Loading/loading";
 import Error from "./Components/pages/error/error";
 
 
@@ -28,10 +29,18 @@ function App() {
     const loggedIn = localStorage.getItem('accessToken') !== null;
     const userData =  JSON.parse(localStorage.getItem('userData')); 
     const userRole = userData ? userData.role : null;
- 
+    const [isLoading, setIsLoading] = useState(true);
+    useEffect(() => {
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 1500); // Adjust time as needed
+    }, []);
     const isAdmin = userRole === 'admin';
     return (
         <div>
+            {isLoading ? (
+      <Loading />
+    ) : (
             <BrowserRouter>
             
                 <Header/>
@@ -76,6 +85,7 @@ function App() {
 
                 <Footer/>
             </BrowserRouter>
+    )}
         </div>
     );
 }

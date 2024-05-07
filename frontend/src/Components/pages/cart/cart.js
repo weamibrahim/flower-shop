@@ -8,10 +8,10 @@ function Cart() {
 
   useEffect(() => {
     getCart(userId);
-  }, [userId]);
+  }, []);
 
   const getCart = async (userId) => {
-   
+
     const accessToken = localStorage.getItem('accessToken');
     try {
       const response = await fetch(`https://flowershop-bw6z.onrender.com/api/cart/${userId}`, {
@@ -19,10 +19,10 @@ function Cart() {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-        
-                
-            'Authorization': `Bearer ${accessToken}`,
-         
+
+
+          'Authorization': `Bearer ${accessToken}`,
+
         }
 
       });
@@ -37,7 +37,7 @@ function Cart() {
 
 
   const updateCartAfterActions = async (flowerId, action) => {
- 
+
     const accessToken = localStorage.getItem('accessToken');
     // console.log('userId:', userId); // Check if userId is defined
     // console.log('flowerId:', flowerId); // Check if flowerId is defined
@@ -132,10 +132,6 @@ function Cart() {
                     >
                       <AiTwotoneDelete style={{ fontSize: "50px" }} />
                     </button>
-
-
-
-
 
 
                   </td>

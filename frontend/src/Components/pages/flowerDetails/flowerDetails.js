@@ -55,7 +55,7 @@ const FlowerDetail = () => {
     <div className="container my-5 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
       <div className="row">
         <div className="col-md-6 mb-4">
-          <img src={'https://flowershop-bw6z.onrender.com/images/' + flower.image} style={{ maxWidth: "500px", maxHeight: "500px" }} alt="flower.name" className="img-fluid rounded-circle" />
+          <img src={'https://flowershop-bw6z.onrender.com/images/' + flower.image}  alt="flower.name" className="img-fluid rounded-circle" />
         </div>
         <div className="col-md-6 text-center text-capitalize">
           {flower.des}
