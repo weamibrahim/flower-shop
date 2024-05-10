@@ -18,7 +18,7 @@ router.get('/alluser',verifyToken,authorization, userController.getAllUsers);
 router.delete('/delete/:id',verifyToken,authorization, userController.deleteUserById);
 
 
-router.put('/update/:id',verifyToken, authorization,userController.updateUserById);
+router.put('/update/:id',verifyToken, userController.updateUserById);
 
 
 // authRoutes
