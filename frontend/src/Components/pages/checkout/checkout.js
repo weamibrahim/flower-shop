@@ -1,147 +1,40 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./checkout.css";
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-function PaymentForm() {
-
-
-const navigate = useNavigate();
-  const [cart, setCart] = useState({});
-  const userId = JSON.parse(localStorage.getItem('userData'))._id;
-
-  useEffect(() => {
-    getCart(userId);
-  }, [userId]);
-
-  const getCart = async (userId) => {
+function Checkout({cartItems}) {
+  console.log(cartItems);
+  const userId = JSON.parse(localStorage.getItem('userData'))._id
+  const handleCheckout = async () => {
     try {
-      const response = await fetch(`https://flowershop-bw6z.onrender.com/api/cart/${userId}`, {
-
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
+       await axios.post(
+        "https://flowershop-bw6z.onrender.com/api/stripe/create-checkout-session",
+       { cartItems,
+userId
+        
+       },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${localStorage.getItem("accessToken")}`,
+          },
         }
-
+      ).then((response) => {
+        window.location.href = response.data.url
       });
-      const data = await response.json();
-      setCart(data);
-      // console.log('updatedCart:', data); // Debugging
 
-    } catch (error) {
-      console.error(error);
-    }
-  };
-  const calculateTotalPrice = () => {
-    let total = 0;
-    if (cart.items) {
-      total = cart.items.reduce((accumulator, item) => {
-        const itemTotal = item.quantity * item.flowerId.price;
-        return accumulator + itemTotal;
-      }, 0);
-    }
-    return total;
-  };
-
-  // const location = useLocation();
-  // const queryParams = new URLSearchParams(location.search);
-  // const totalPrice = queryParams.get('totalPrice');
-
-  const [formData, setFormData] = useState({
-    cardNumber: '',
-    expMonth: '',
-    expYear: '',
-    cvv: '',
-    amount: calculateTotalPrice(),
-  });
-
-  const [isLoading, setIsLoading] = useState(false);
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    setIsLoading(true);
-    const totalPrice = calculateTotalPrice();
-    const formDataWithAmount = { ...formData, amount: totalPrice }; 
-    try {
-      const response = await fetch('https://flowershop-bw6z.onrender.com/api/charge/payment', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formDataWithAmount),
-      });
-       console.log(formDataWithAmount);
-      if (response.ok) {
-        const data = await response.json();
-        alert("Your order is about to be delivered")
-        console.log(data.message);
-        navigate("/home");
-      } else {
-        console.error('Failed to process payment');
-       
-      }
-    } catch (error) {
-      console.error(error);
     
+    } catch (error) {
+      console.error('Error during checkout:', error);
     }
-
-    setIsLoading(false);
-  };
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+   
   };
 
   return (
-    <div className='ground'>
-       
-      <div className='d-flex justify-content-center my-2 '>
-        <form onSubmit={handleSubmit} style={{ boxShadow: " 5px 5px 5px 5px #c8c8c8", padding: "10px", width: "500px" }}>
-          <h4 className='text-center'>Payment</h4>
-          {/* Form fields */}
-          <label>Card Number</label>
-          <input className='form-control  mb-3'
-            type="text"
-            name="cardNumber"
-            placeholder="Card Number"
-            onChange={handleChange}
-          />
-          <label >Exp Month</label>
-          <input className='form-control mb-3'
-            type="text"
-            name="expMonth"
-            placeholder="Exp Month"
-            onChange={handleChange}
-          />
-          <label > Exp Year </label>
-          <input className='form-control mb-3'
-            type="text"
-            name="expYear"
-            placeholder="Exp Year"
-            onChange={handleChange}
-          />
-          <label >CVV</label>
-          <input className='form-control mb-3 '
-            type="text"
-            name="cvv"
-            placeholder="CVV"
-            onChange={handleChange}
-          />
-          {/* Other form fields */}
-          <div className='d-flex justify-content-center' >
-            <button type="submit" className="btn btn-info mb-3 " disabled={isLoading}>
-              {isLoading ? 'Processing...' : 'Pay'}
-            </button>
-          </div>
-        </form>
-      </div>
+    <div className='d-flex justify-content-center'>
+    <button className='btn btn-primary' onClick={handleCheckout}>checkout</button>
     </div>
   );
 }
 
-export default PaymentForm;
+export default Checkout;

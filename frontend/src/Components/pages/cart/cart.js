@@ -2,6 +2,7 @@ import "./cart.css";
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AiTwotoneDelete } from 'react-icons/ai';
+import Checkout  from "../checkout/checkout";
 function Cart() {
   const [cart, setCart] = useState({});
   const userId = JSON.parse(localStorage.getItem('userData'))._id;
@@ -143,12 +144,7 @@ function Cart() {
       </div>
       <div className="row d-flex justify-content-center" >
         <p className="text-center">Total Price: {calculateTotalPrice()} LE</p>
-        <button className="btn btn-info px-2 my-4" style={{ width: '200px' }}  >
-          <NavLink style={{ color: "white", textDecoration: "none" }}
-            to={{
-              pathname: "/checkout",
-              // search: `?totalPrice=${calculateTotalPrice()}`, // Pass the total price as a query parameter
-            }}> Checkout </NavLink></button>
+       <Checkout  cartItems={cart.items}  />
       </div>
     </div>
 

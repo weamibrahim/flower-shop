@@ -139,3 +139,15 @@ exports.decrementCartItemQuantity = async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 };
+exports.clearCartItems = async (userId) => {
+  try {
+    const cart = await Cart.findOne({ userId });
+    if (cart) {
+      cart.items = []; // Clear cart items
+      await cart.save();
+    }
+  } catch (error) {
+    console.error(error);
+    throw new Error("Failed to clear cart items");
+  }
+};

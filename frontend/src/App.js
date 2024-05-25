@@ -12,7 +12,7 @@ import FlowerDetail from "./Components/pages/flowerDetails/flowerDetails";
 import Profile from "./Components/pages/profile/profile"
 import Cart from "./Components/pages/cart/cart";
 import UpdateProfile from "./Components/pages/updateProfile/update";
-import Checkout from "./Components/pages/checkout/checkout";
+
 
 import ContactUs from "./Components/pages/contactUs/contactus";
 
@@ -77,7 +77,7 @@ function App() {
                     
                     <Route path="/flower/:id" element={loggedIn ?<FlowerDetail />: <Navigate to="/login"/>} />
                     <Route path="/cart"element={loggedIn ? <Cart /> : <Navigate to="/login"/>}/>
-                    <Route path="/checkout"element={<Checkout/>}/>
+                    
                     <Route path="/contactus" element={<ContactUs />} />
                     <Route path="*" element={<Error />} />
                 </Routes>

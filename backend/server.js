@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const userRoutes = require("./Router/UserRoutes");
 const FlowerRoutes =require("./Router/FlowerRoutes")
 const cartRoutes=require("./Router/CartRoutes")
-const orderRoutes=require("./Router/OrderRoutes")
+const StripeRoutes=require("./Router/StripeRoutes")
 
 // Load environment variables from .env file
 require("dotenv").config();
@@ -31,7 +31,7 @@ app.use("/api/users",userRoutes);
 
 app.use("/api/Flower",FlowerRoutes);
 app.use("/api/cart",cartRoutes);
-app.use("/api/charge",orderRoutes);
+app.use("/api/stripe",StripeRoutes);
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.connection.on("connected", () => {
   console.log("Connected to the database");
