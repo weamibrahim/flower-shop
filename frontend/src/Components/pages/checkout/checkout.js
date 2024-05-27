@@ -31,9 +31,13 @@ userId
   };
 
   return (
-    <div className='d-flex justify-content-center'>
-    <button className='btn btn-primary' onClick={handleCheckout}>checkout</button>
+  
+    <div >
+    <button className="button_checkout my-3" onClick={handleCheckout}>checkout</button>
+   
     </div>
+   
+
   );
 }
 

@@ -2,6 +2,7 @@ import "./cart.css";
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AiTwotoneDelete } from 'react-icons/ai';
+import { FaLongArrowAltLeft } from "react-icons/fa";
 import Checkout  from "../checkout/checkout";
 function Cart() {
   const [cart, setCart] = useState({});
@@ -142,9 +143,20 @@ function Cart() {
             ))}
         </table>
       </div>
-      <div className="row d-flex justify-content-center" >
-        <p className="text-center">Total Price: {calculateTotalPrice()} LE</p>
-       <Checkout  cartItems={cart.items}  />
+
+  <div className="row">
+        {/* Left-aligned content */}
+        
+        {/* Right-aligned content */}
+        <div className="col-md-6 d-flex justify-content-start align-items-center">
+          <div className="d-flex justify-content-center align-items-center">
+            <FaLongArrowAltLeft className="mx-2" /> <NavLink to="/flowers" className="text-decoration-none text-black">Continue Shopping</NavLink>
+          </div>
+        </div>
+        <div className="col-md-6 d-flex flex-column align-items-end">
+          <p className="text-center mb-0">Total Price: {calculateTotalPrice()} LE</p>
+          <Checkout cartItems={cart.items} />
+        </div>
       </div>
     </div>
 
