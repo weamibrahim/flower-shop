@@ -50,7 +50,7 @@ function App() {
                
                     {isAdmin ? (
                        <>
-                    <Route path="/dashboard/*" element={<DashBoard />} />
+                    <Route path="/dashboard" element={<DashBoard />} />
                     <Route path="dashboard/alluser" element={<Alluser />} />
                     <Route path="dashboard/allflower" element={<AllFlower />} />
 
@@ -61,7 +61,7 @@ function App() {
 </>
 
                     ) : (
-                        <Route path="/dashboard/*" element={<Navigate to="/dashboard/not-authorized" />} />
+                        <Route path="/dashboard/*" element={<Error />} />
                         )}
 
 
