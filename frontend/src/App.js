@@ -26,7 +26,8 @@ import Error from "./Components/pages/error/error";
 
 
 function App() {
-    const loggedIn = localStorage.getItem('accessToken') !== null;
+
+    const [loggedIn, setLoggedIn] = useState(localStorage.getItem('accessToken') !== null);
     const userData =  JSON.parse(localStorage.getItem('userData')); 
     const userRole = userData ? userData.role : null;
     const [isLoading, setIsLoading] = useState(true);
@@ -43,7 +44,7 @@ function App() {
     ) : (
             <BrowserRouter>
             
-                <Header/>
+                <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
             
                 <Routes>
                     <Route path="/" element={<Home />} />
@@ -68,7 +69,7 @@ function App() {
                     <Route path="/home" element={<Home />} />
                     <Route path="/about" element={<About />} />
                   
-                    <Route path="/login" element={<Login />} />
+                    <Route path="/login" element={<Login  setLoggedIn={setLoggedIn}/>} />
                     <Route path="/signup" element={<Signup />} />
                     <Route path="/profile" element={loggedIn ? <Profile /> : <Navigate to="/login" />} />
                     <Route path="/update" element={loggedIn ? <UpdateProfile /> : <Navigate to="/login" />} />

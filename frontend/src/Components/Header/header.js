@@ -10,11 +10,11 @@ import { useState } from 'react';
 import { MdDashboard } from "react-icons/md";
 import { IoPersonSharp  } from "react-icons/io5";
 import { MdOutlineContactPhone } from "react-icons/md";
-function Header() {
-  const [loggedIn, setLoggedIn] = useState(localStorage.getItem('accessToken') !== null);
+function Header({ loggedIn, setLoggedIn }) {
+  
 
   const handleLogout = () => {
-    // Clear stored email and password
+   
     localStorage.removeItem('accessToken');
     localStorage.removeItem('userData');
 
@@ -35,8 +35,7 @@ function Header() {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav ms-auto mb-1 mb-lg-0">
-              {userRole !== 'admin' && (
-                <>
+              
                   <li>
                     <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/home"><FaHome  className='fs-6 m-1'/>Home</NavLink>
                   </li>
@@ -49,37 +48,24 @@ function Header() {
                   <li className="nav-item">
                     <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/flowers"><IoMdFlower  className='fs-6 m-1'/>Flower </NavLink>
                   </li>
-                  <li className="nav-item">
-                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/profile"><BsFillPersonFill className="icone" /></NavLink>
-                  </li>
-                </>
-              )}
+                 
+              
               {userRole === 'admin' && (
-                <>
+               
                   <li className="nav-item">
                     <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/dashboard"><MdDashboard className='fs-6 m-1' />Dashboard</NavLink>
                   </li>
-                  <li className="nav-item">
-                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/home"> <FaHome  className='fs-6 m-1'/>Home</NavLink>
-                  </li>
-                  <li className="nav-item">
-                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/about"> <IoPersonSharp   className='fs-6 m-1'/>About </NavLink>
-                  </li>
-                  <li className="nav-item">
-                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/contactus"><MdOutlineContactPhone className='fs-6 m-1' />  ContactUs </NavLink>
-                  </li>
-                  <li className="nav-item">
-                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/flowers"><IoMdFlower  className='fs-6 m-1'/> Flower </NavLink>
-                  </li>
-                  <li className="nav-item">
-                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/profile"><BsFillPersonFill className="icone" /></NavLink>
-                  </li>
-                </>
+              
               )}
               {loggedIn ? (
+                <>
+                 <li className="nav-item">
+                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/profile"><BsFillPersonFill className="icone" /></NavLink>
+                  </li>
                 <li className="nav-item">
                   <NavLink style={{ color: 'black', textDecoration: 'none' }} onClick={handleLogout} to="/login"><IoIosLogOut /></NavLink>
                 </li>
+                </>
               ) : (
                 <>
                   <li className="nav-item">

@@ -2,7 +2,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import "./login.css"
 import { useState } from "react";
 
-function Login() {
+function Login({ setLoggedIn }) {
   const navigate = useNavigate()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -37,6 +37,7 @@ function Login() {
         localStorage.setItem('userData', JSON.stringify(data.user));
         localStorage.setItem('accessToken', data.accessToken);
 
+        setLoggedIn(true);
         const userRole = data.user.role;
 
         if (userRole === 'admin') {
