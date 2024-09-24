@@ -29,16 +29,14 @@ function Header({ loggedIn, setLoggedIn }) {
         <div className="container-fluid">
           <GiVineFlower className='icon' />
 
-          <h4 style={{ textShadow: '2px 2px 5px black', fontFamily: " 'Sofia " }} className='mx-2'> MY Flower </h4>
+          <h4 style={{ textShadow: '2px 2px 5px black', fontFamily: " 'Sofia " }} className='mx-2'>   <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/home">My Flower</NavLink></h4>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav ms-auto mb-1 mb-lg-0">
               
-                  <li>
-                    <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/home"><FaHome  className='fs-6 m-1'/>Home</NavLink>
-                  </li>
+               
                   <li className="nav-item">
                     <NavLink style={{ color: 'black', textDecoration: 'none' }} to="/about"><IoPersonSharp  className='fs-6 m-1'/>About </NavLink>
                   </li>

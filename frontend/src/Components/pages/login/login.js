@@ -59,18 +59,18 @@ function Login({ setLoggedIn }) {
       <div className="my-5">
         <div className="cardslog">
           <a className="login">Login</a>
-          <div className="inputBox1">
+          <div className="inputBox">
             <input type="text" required value={email} onChange={(e) => setEmail(e.target.value)} />
             <span className="user">Email</span>
           </div>
 
           <div className="inputBox">
             <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
-            <span>Password</span>
+            <span style={{fontSize:"12px"}}>Password</span>
           </div>
 
           <button className="enter" onClick={handleLogin}>Enter</button>
-          <p>If you don't have an account, please <NavLink className="text-decoration-none" to="/signup">signup</NavLink></p>
+          <p className="text-center"> If you don't have an account, please <NavLink className="text-decoration-none" to="/signup">signup</NavLink></p>
 
           {errorMessage && <p className="error">{errorMessage}</p>}
         </div>

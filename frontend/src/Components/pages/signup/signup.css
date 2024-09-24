@@ -14,6 +14,7 @@
     align-items: center;
     min-height: 350px;
     width: 600px;
+    padding: 30px;
     flex-direction: column;
     gap: 35px;
     border-radius: 15px;
@@ -29,26 +30,31 @@
       justify-content: center;
       align-items: center;
       min-height: 350px;
-      max-width:  400px;
+      max-width:  300px;
       flex-direction: column;
-     
+     padding: 30px;
       gap: 35px;
       border-radius: 15px;
       background: #e3e3e3;
       box-shadow: 16px 16px 32px #c8c8c8,
             -16px -16px 32px #fefefe;
-      border-radius: 8px;/* Adjust width for smaller screens */
+      border-radius: 8px;
+    }
+    .inputBox input, .inputBox select{
+max-width: 280px !important;
+
     }
   }  
-  .inputBox,
-  .inputBox1 {
+ 
+  .input
+  {
     position: relative;
-    width: 350px;
+    width: 100%;
   }
   
-  .inputBox input, .inputBox select,
-  .inputBox1 input {
-    width: 100%;
+ 
+  .input input, .inputBox select {
+   width: 100%;
     padding: 10px;
     outline: none;
     border: none;
@@ -61,8 +67,7 @@
     border-bottom-left-radius: 8px;
   }
   
-  .inputBox span,
-  .inputBox1 span {
+  .input span{
     margin-top: 5px;
     position: absolute;
     left: 0;
@@ -78,9 +83,9 @@
     border-radius: 8px;
   }
   
-  .inputBox input:valid~span,
-  .inputBox input:focus~span {
-    transform: translateX(113px) translateY(-15px);
+  .input input:valid~span,
+  .input input:focus~span {
+    transform: translateX(400px) translateY(-15px);
     font-size: 0.8em;
     padding: 5px 10px;
     background: #000;
@@ -88,24 +93,25 @@
     color: #fff;
     border: 2px;
   }
+ 
   
-  .inputBox1 input:valid~span,
-  .inputBox1 input:focus~span {
-    transform: translateX(156px) translateY(-15px);
-    font-size: 0.8em;
-    padding: 5px 10px;
-    background: #000;
-    letter-spacing: 0.2em;
-    color: #fff;
-    border: 2px;
-  }
-  
-  .inputBox input:valid,
-  .inputBox input:focus,
-  .inputBox1 input:valid,
-  .inputBox1 input:focus {
+  .input input:valid,
+  .input input:focus{
     border: 2px solid #000;
     border-radius: 8px;
+  }
+  @media  (max-width:670px){
+    .input input:valid~span,
+  .input input:focus~span {
+    transform: translateX(100px) translateY(-15px);
+    font-size: 0.8em;
+    padding: 5px 10px;
+    background: #000;
+    letter-spacing: 0.2em;
+    color: #fff;
+    border: 2px;
+  }
+    
   }
   
   .enter {

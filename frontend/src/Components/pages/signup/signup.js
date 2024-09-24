@@ -99,23 +99,23 @@ function Signup() {
         <div className="my-5">
           <div className="cards">
             <a className="singup">Sign Up</a>
-            <div className="inputBox1">
+            <div className="input">
               <input type="email" name="email" value={users.email} onChange={handleInputChange} required />
               <span className="user">Email</span>
             </div>
             {errorMessage.email && <p className="error">{errorMessage.email}</p>}
-            <div className="inputBox">
+            <div className="input">
               <input type="text" name="user_name" value={users.user_name} onChange={handleInputChange} required />
-              <span>Username</span>
+              <span>name</span>
             </div>
             {errorMessage.user_name && <p className="error">{errorMessage.user_name}</p>}
         
-            <div className="inputBox">
+            <div className="input">
               <input type="password" name="password" value={users.password} onChange={handleInputChange} required />
-              <span>Password</span>
+              <span style={{fontSize:"12px"}} >Password</span>
             </div>
             {errorMessage.password && <p className="error">{errorMessage.password}</p>}
-            <div className="inputBox">
+            <div className="inputBox w-100">
               <select name="gender" value={users.gender} onChange={handleInputChange} required>
                 <option value="">Select Gender</option>
                 <option value="male">Male</option>
@@ -123,18 +123,18 @@ function Signup() {
               </select>
             </div>
            
-            <div className="inputBox">
+            <div className="input">
               <input type="text" name="mobile" value={users.mobile} onChange={handleInputChange} required />
               <span>Mobile</span>
             </div>
             {errorMessage.mobile && <p className="error">{errorMessage.mobile}</p>}
-            <div className="inputBox">
+            <div className="input">
               <input type="text" name="address" value={users.address} onChange={handleInputChange} required />
-              <span>Address</span>
+              <span style={{fontSize:"15px"}} >Address</span>
             </div>
            
             <button className="enter" onClick={handleSignup}>Enter</button>
-            <p>If you have an account, please <NavLink to="/login" className="text-decoration-none">login</NavLink></p>
+            <p className="text-center">If you have an account, please <NavLink to="/login" className="text-decoration-none">login</NavLink></p>
   
             
           </div>

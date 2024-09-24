@@ -65,52 +65,57 @@ function UpdateProfile() {
 
                 <form onSubmit={handleUpdate} className="cardsup">
                     <h2 className="login">Update </h2>
-                    <div className="inputBox1">
+                    <div className="">
+                        <span >Name</span>
                         <input
                             type="text"
                             name="user_name"
                             value={formData.user_name || ''}
                             onChange={handleInputChange}
+                            className="form-control"
                         />
-                        <span className="user">name</span>
+                       
                     </div>
 
-                    <div className="inputBox">
+                    <div className="">
+                    <span className="">Email</span>
                         <input
                             type="text"
                             name="email"
                             value={formData.email || ''}
                             onChange={handleInputChange}
+                            className="form-control"
                         />
-                        <span className="user">Email</span>
+                        
                     </div>
 
 
-                    <div className="inputBox">
-                        <select value={formData.gender} name="gender" onChange={handleInputChange} required>
+                    <div className="">
+                    <span className="">Gender</span>
+                        <select value={formData.gender} name="gender" onChange={handleInputChange} className="select form-control" required>
                             <option value="">Select Gender</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
-                            <option value="other">Other</option>
+                            
                         </select>
 
                     </div>
-                    {/* <div className="inputBox">
+                    {/* <div className="">
                         <select value={formData.role} name="role" onChange={handleInputChange} required>
                             <option value="">Select Role</option>
                             <option value="user">User</option>
                             <option value="admin">Admin</option>
                         </select>
                     </div> */}
-                    <div className="inputBox">
-
-                        <input type="text" value={formData.mobile} name="mobile" onChange={handleInputChange} required />
-                        <span className="user">address</span>
+                    <div className="">
+                    <span className="">mobile</span>
+                        <input type="text" value={formData.mobile} name="mobile" onChange={handleInputChange} className="form-control" required />
+                       
                     </div>
-                    <div className="inputBox">
-
-                        <input type="text" value={formData.address} name="address" onChange={handleInputChange} required />
-                        <span className="user">address</span>
+                    <div className="">
+                    <span className="">address</span>
+                        <input type="text" value={formData.address} name="address" onChange={handleInputChange} className="form-control" required />
+                     
                     </div>
 
                     <button className="btn btn-info" style={{ marginBottom: "20px" }} type="submit">Update </button>
