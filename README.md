@@ -1,4 +1,5 @@
 # Flower-shop
+
 <div align="center" margin-top="5px">
   <img src="https://img.freepik.com/free-photo/top-view-pink-flower-with-drops_1112-450.jpg?w=996&t=st=1692908385~exp=1692908985~hmac=d23cce672841dbf80bf8e7ae4da34b7ae15299bf6dbeef362f0cb7694f6b2ebd" alt="animate" width="200"/><br>
   <a href=#">
@@ -8,13 +9,12 @@
 
 ## **INTRODUCTION**
 
-`my flower` is an E-Commerce platform that allows users to buy flower online and  With flower
-
+`my flower` is an E-Commerce platform that allows users to buy flower online and With flower
 
 ## **FEATURES**
 
 - **User-friendly Interface**<br>
-  The website offers a  user-friendly interface for easy and enjoyable food discovery and online ordering.
+  The website offers a user-friendly interface for easy and enjoyable food discovery and online ordering.
 
 - **Authorization and Authentication**<br>
   The website provides secure authorization and authentication features, including login with Google and email verification.
@@ -23,27 +23,19 @@
   The website offers searching for flower based on it`s price or name.
 
 - **Detailed flower Information**<br>
-  The website provides the required information about the flower like: name,  description, image and price.
-
+  The website provides the required information about the flower like: name, description, image and price.
 
 - **Shopping Cart**<br>
   The website includes a shopping cart functionality where users can add foods they wish to purchase.
-  
 - **Secure Checkout and Payment Process**<br>
   The website ensures a secure and hassle-free checkout process, and make payments through a secure payment gateway.
 
 - **Mobile Responsiveness**<br>
-  The website is designed to be responsive across various devices, including smartphones and tablets. 
-
-
-
-
+  The website is designed to be responsive across various devices, including smartphones and tablets.
 
 ## **DEMO**
 
 🎥 Watch Our Demo Video from [Here](https://drive.google.com/file/d/1nSDpP25ZB0ZPodsdmHJRVwlh3IB6dw_W/view?usp=drive_link)
-
-
 
 ## **INSTALLATION**
 
@@ -84,8 +76,7 @@
     ng serve -o
   </pre>
 
-<h4>Open your web browser and navigate to `https://flowershop-bw6z.onrender.com` to access the Threads & Beads website.</h4><br>
-
+<h4>Open your web browser and navigate to `https://flower-shop-roan.vercel.app` to access the Threads & Beads website.</h4><br>
 
 ## **TECHNOLOGIES**
 
@@ -98,7 +89,5 @@
 <br>
 
 ## **Deployment**
+
 we can see it [https://flowershop-7326f.web.app]
-
-
-
