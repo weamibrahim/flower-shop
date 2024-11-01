@@ -10,7 +10,7 @@ function Cart() {
 
   useEffect(() => {
     getCart(userId);
-  }, []);
+  }, [cart]);
 
   const getCart = async (userId) => {
     const accessToken = localStorage.getItem("accessToken");
