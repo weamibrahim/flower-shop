@@ -5,6 +5,7 @@ const FlowerDetail = () => {
   let { id } = useParams();
   console.log(id);
   let [flower, setflower] = useState([]);
+  
   useEffect(() => {
     fetch(`https://flower-shop-roan.vercel.app/api/flower/${id}`)
       .then((response) => {
@@ -14,6 +15,7 @@ const FlowerDetail = () => {
         //console.log(data);
 
         setflower(data);
+        console.log(flower);
       });
   }, []);
   const handleAddToCart = async (e) => {
@@ -52,8 +54,8 @@ const FlowerDetail = () => {
       <div className="row">
         <div className="col-md-6 mb-4">
           <img
-            src={"https://flower-shop-roan.vercel.app/images/" + flower.image}
-            alt="flower.name"
+            src={`https://flowershop-bw6z.onrender.com/images/${flower.image}`}
+            alt={flower.name || "Flower"}
             className="img-fluid rounded-circle"
           />
         </div>

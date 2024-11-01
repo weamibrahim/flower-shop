@@ -63,7 +63,9 @@ function AddFlower() {
           console.log("Flower created successfully");
           navigate("/dashboard/allflower");
         } else {
-          console.error("Error creating flower:", response.statusText);
+          return response.json().then((errorData) => {
+            console.error("Error creating flower:", response.statusText, errorData);
+          });
         }
       })
       .catch((error) => {
