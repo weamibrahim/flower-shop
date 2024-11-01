@@ -9,12 +9,15 @@
     "routes": [
         {
             "src": "/images/(.*)",
-            "dest": "/backend/public/images/$1"
+            "dest": "/public/images/$1"  
+        },
+        {
+            "src": "/api/(.*)",
+            "dest": "/server.js"           
         },
         {
             "src": "/(.*)",
-            "dest": "/server.js"
+            "dest": "/server.js"           
         }
     ]
 }
-
